@@ -1,0 +1,96 @@
+Informe del paquete
+
+-----------------------------------------------------------------------------
+Documento:
+Nombre: APP 2.ai
+Modo de color: Color RGB
+Perfil de color: sRGB IEC61966-2.1
+Unidades de regla: píxeles
+Dimensiones de la mesa de trabajo: 1080 px x 1920 px
+Mostrar imágenes en modo contorno: Desactivado
+Resaltar fuentes sustituidas: Desactivado
+Resaltar glifos sustituidos: Desactivado
+Conservar capacidad de edición de texto
+Simular papel de color: Desactivado
+
+-----------------------------------------------------------------------------
+Objetos de tintas planas:
+
+-----------------------------------------------------------------------------
+Fuentes no disponibles:Ninguno
+
+-----------------------------------------------------------------------------
+Fuentes protegidas no empaquetadas:Ninguno
+
+-----------------------------------------------------------------------------
+Fuentes:
+Hiruko Pro Book (OTF)
+Open Sans (OTF)
+Optien (TrueType)
+Tetroserbogia (TrueType)
+UniformBook (OTF)
+UniformCondBook (OTF)
+
+-----------------------------------------------------------------------------
+Fuentes incrustadas:
+Ninguno
+
+-----------------------------------------------------------------------------
+Enlaces no disponibles:
+Ninguno
+
+-----------------------------------------------------------------------------
+Imágenes enlazadas:
+
+C:\Users\Darwin\Desktop\unancha2.jpg
+Tipo: RGB
+Bits por píxel: 24
+Canales: 3
+Tamaño: 9267K, 2479 por 1276 píxeles
+Dimensiones: 1859,25 por 957 puntos 
+Resolución: 96 por 96 píxeles por pulgada
+
+
+C:\Users\Darwin\Desktop\APP IMAGENES\colores saturados.PNG
+Tipo: RGB transparente
+Bits por píxel: 32
+Canales: 4
+Tamaño: 199K, 172 por 297 píxeles
+Dimensiones: 51 por 222,75 puntos 
+Resolución: 242,824 por 96 píxeles por pulgada
+
+
+C:\Users\Darwin\Desktop\RECURSOS APP\niñaaa.png
+Tipo: RGB transparente
+Bits por píxel: 32
+Canales: 4
+Tamaño: 6601K, 1300 por 1300 píxeles
+Dimensiones: 451,769 por 459,341 puntos 
+Resolución: 207,185 por 203,77 píxeles por pulgada
+
+
+C:\Users\Darwin\Desktop\RECURSOS APP\niñaaa.png
+Tipo: RGB transparente
+Bits por píxel: 32
+Canales: 4
+Tamaño: 6601K, 1300 por 1300 píxeles
+Dimensiones: 293,082 por 297,994 puntos 
+Resolución: 319,364 por 314,1 píxeles por pulgada
+
+
+C:\Users\Darwin\Desktop\RECURSOS APP\niñaaa.png
+Tipo: RGB transparente
+Bits por píxel: 32
+Canales: 4
+Tamaño: 6601K, 1300 por 1300 píxeles
+Dimensiones: 320 por 325,363 puntos 
+Resolución: 292,5 por 287,679 píxeles por pulgada
+
+
+C:\Users\Darwin\Desktop\RECURSOS APP\niñaaa.png
+Tipo: RGB transparente
+Bits por píxel: 32
+Canales: 4
+Tamaño: 6601K, 1300 por 1300 píxeles
+Dimensiones: 451,769 por 459,341 puntos 
+Resolución: 207,185 por 203,77 píxeles por pulgada
