@@ -15,9 +15,12 @@ import {GroupCategory} from '../../interfaces/categories';
 })
 export class CategoryPage {
 
+  abcseg:string='vocales';
+  isVocabulario:boolean=true;
   item:GroupCategory;  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.item=navParams.data.item;
+    this.isVocabulario = navParams.data.item.title =='Vocabulario'? false:true;
   }
 
   ionViewDidLoad() {

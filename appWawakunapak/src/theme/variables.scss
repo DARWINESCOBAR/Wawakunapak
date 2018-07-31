@@ -53,8 +53,13 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
-
+$tabs-md-tab-icon-color-active:#ffffff;
+$tabs-md-tab-color-active:#ffffff;
+$tabs-md-tab-color-inactive:#ffe3ca;
+$segment-button-ios-background-color: #FF7900;
+$fab-list-button-background-color: #FF7900;
+$fab-md-background-color:#FF7900;
+$toolbar-md-active-color:#ffffff;
 
 // App Windows Variables
 // --------------------------------------------------
@@ -86,3 +91,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+

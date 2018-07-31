@@ -7,17 +7,23 @@
 <ion-header>
 
   <ion-navbar >
-    <ion-title >{{ item.title }} - {{ item.titlek }} </ion-title>
-  </ion-navbar>
+    <ion-title >{{ item.title }} - {{ item.titlek }} </ion-title>   
 
+  </ion-navbar>
+  <div *ngIf="!isVocabulario">
+      <ion-segment [(ngModel)]="abcseg" style="background: #FF7900;">
+        <ion-segment-button value="vocales">Vocales</ion-segment-button>
+        <ion-segment-button value="abecedario">Abecedario</ion-segment-button>
+      </ion-segment>
+    </div>
 </ion-header>
 
 
-<ion-content padding>
-  <ion-grid>
+<ion-content padding> 
+  <ion-grid *ngIf="isVocabulario">
     <ion-row>
       <ion-col col-12 *ngFor="let it of item.list; let i= index"  >
-          <button ion-button block style="height: 120px" [outline]="true" >
+          <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est" >
             <ion-grid>
               <ion-row align-items-center>
                 <ion-col><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>
@@ -27,5 +33,36 @@
           </button>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid>  
+  <div [ngSwitch]="abcseg" *ngIf="!isVocabulario">
+      <ion-grid *ngSwitchCase="'vocales'">
+          <ion-row *ngFor="let it of item.list; let i= index">
+              <ion-col col-12 *ngIf="it.est && it.isvocal" >
+                  <button ion-button block style="height: 120px" [outline]="true">
+                    <ion-grid>
+                      <ion-row align-items-center>
+                        <ion-col col-12><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>                      </ion-row>
+                    </ion-grid>
+                  </button>
+              </ion-col>
+              </ion-row>          
+        </ion-grid>
+      
+        <ion-grid *ngSwitchCase="'abecedario'">
+            <ion-row>
+                <ion-col col-4 *ngFor="let it of item.list; let i= index">
+                    <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est" >
+                      <ion-grid>
+                        <ion-row align-items-center>
+                          <ion-col col-12><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>                      </ion-row>
+                      </ion-grid>
+                    </button>
+                </ion-col>
+                </ion-row>          
+          </ion-grid>
+  </div>
+  <!--boton fab-->
+  <ion-fab middle right edge>
+      <button ion-fab><ion-icon name="ios-game-controller-a-outline"></ion-icon></button>      
+    </ion-fab>
 </ion-content>
