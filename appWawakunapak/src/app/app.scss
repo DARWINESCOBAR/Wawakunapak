@@ -18,7 +18,7 @@ ion-title {
   text-align: center;
  
 }
-.toolbar-background-md{
+.toolbar-background-md, .tabs-md .tabbar{
   background: #FF7900 !important;
 }
 .toolbar-title-md, .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
@@ -28,3 +28,14 @@ ion-title {
   position: absolute;
   z-index: 100;
 }
+.button-outline-md{
+  border-color: #FF7900;
+  color: #000000;
+  border-width: 2pt;
+  border-radius: 10pt;
+}
+.button-full-md{
+  border-radius: 10pt;
+}
+
+

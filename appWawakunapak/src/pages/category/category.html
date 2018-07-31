@@ -17,7 +17,14 @@
   <ion-grid>
     <ion-row>
       <ion-col col-12 *ngFor="let it of item.list; let i= index"  >
-          <button ion-button block style="height: 100px" [outline]="true" >{{ it.titlek }}</button>
+          <button ion-button block style="height: 120px" [outline]="true" >
+            <ion-grid>
+              <ion-row align-items-center>
+                <ion-col><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>
+                <ion-col col-8>{{ it.titlek }}</ion-col>
+              </ion-row>
+            </ion-grid>
+          </button>
       </ion-col>
     </ion-row>
   </ion-grid>

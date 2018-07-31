@@ -4,6 +4,8 @@ export class Globals{
         {
         id:1,
         title:'Vocabulario',
+        colorBt:'#662D91',
+        icon:'../../assets/imgs/home/vocabulario.png',        
         list: [
             {
                 id:1,
@@ -96,11 +98,14 @@ export class Globals{
             id:2,
             title:'Numeros',
             titlek:'Yupaykuna',
+            colorBt:'#006837',
+            icon:'../../assets/imgs/home/numeros.png',
             list: [
                 {
                     id:1,
                     title:'uno',
                     titlek:'Shunk',
+                    icon:'../../assets/imgs/categorias/1.png',
                     sing:'',
                     est:true
                 },
@@ -108,6 +113,7 @@ export class Globals{
                     id:2,
                     title:'dos',
                     titlek:'Iskay',
+                    icon:'../../assets/imgs/categorias/2.png',
                     sing:'',
                     est:true
                 },
@@ -115,6 +121,7 @@ export class Globals{
                     id:3,
                     title:'tres',
                     titlek:'Kimsa',
+                    icon:'../../assets/imgs/categorias/3.png',
                     sing:'',
                     est:true
                 },   
@@ -122,9 +129,58 @@ export class Globals{
                     id:4,
                     title:'cuatro',
                     titlek:'Chusku',
+                    icon:'../../assets/imgs/categorias/4.png',
                     sing:'',
                     est:true
-                },                      
+                },
+                {
+                    id:5,
+                    title:'cinco',
+                    titlek:'Pichka',
+                    icon:'../../assets/imgs/categorias/5.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:6,
+                    title:'seis',
+                    titlek:'Sukta',
+                    icon:'../../assets/imgs/categorias/6.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:7,
+                    title:'siete',
+                    titlek:'Kanchis',
+                    icon:'../../assets/imgs/categorias/7.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:8,
+                    title:'ocho',
+                    titlek:'Pusak',
+                    icon:'../../assets/imgs/categorias/8.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:9,
+                    title:'nuevo',
+                    titlek:'Iskun',
+                    icon:'../../assets/imgs/categorias/9.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:0,
+                    title:'cero',
+                    titlek:'Illa',
+                    icon:'../../assets/imgs/categorias/0.png',
+                    sing:'',
+                    est:true
+                }                      
             ],
             est:true        
         },
@@ -132,6 +188,8 @@ export class Globals{
             id:3,
             title:'Colores',
             titlek:'Tullpukuna',
+            icon:'../../assets/imgs/home/colores.png',
+            colorBt:'#FFFF00',
             list: [
                 {
                     id:1,
@@ -156,6 +214,161 @@ export class Globals{
                 },                
             ],
             est:true        
-        } 
+        } ,
+        {
+            id:4,
+            title:'Cuerpo Humano',
+            titlek:'Runa aycha',
+            icon:'../../assets/imgs/home/cuerpo.png',
+            colorBt:'#FF7900',
+            list: [
+                {
+                    id:1,
+                    title:'amarrillo',
+                    titlek:'Killu',
+                    sing:'',
+                    est:true
+                },               
+                {
+                    id:2,
+                    title:'azul',
+                    titlek:'Ankas',
+                    sing:'',
+                    est:true
+                },                
+                {
+                    id:3,
+                    title:'cafe',
+                    titlek:'Paku',
+                    sing:'',
+                    est:true
+                },                
+            ],
+            est:true        
+        } ,
+        {
+            id:5,
+            title:'Familia',
+            titlek:'Ayllukuna',
+            icon:'../../assets/imgs/home/familia.png',
+            colorBt:'#ED1C24',
+            list: [
+                {
+                    id:1,
+                    title:'amarrillo',
+                    titlek:'Killu',
+                    sing:'',
+                    est:true
+                },               
+                {
+                    id:2,
+                    title:'azul',
+                    titlek:'Ankas',
+                    sing:'',
+                    est:true
+                },                
+                {
+                    id:3,
+                    title:'cafe',
+                    titlek:'Paku',
+                    sing:'',
+                    est:true
+                },                
+            ],
+            est:true        
+        } ,
+        {
+            id:6,
+            title:'Animales',
+            titlek:'Wiwakuna',
+            icon:'../../assets/imgs/home/animal.png',
+            colorBt:'#662D91',
+            list: [
+                {
+                    id:1,
+                    title:'amarrillo',
+                    titlek:'Killu',
+                    sing:'',
+                    est:true
+                },               
+                {
+                    id:2,
+                    title:'azul',
+                    titlek:'Ankas',
+                    sing:'',
+                    est:true
+                },                
+                {
+                    id:3,
+                    title:'cafe',
+                    titlek:'Paku',
+                    sing:'',
+                    est:true
+                },                
+            ],
+            est:true        
+        } ,
+        {
+            id:7,
+            title:'Frutas',
+            titlek:'Rurukuna',
+            icon:'../../assets/imgs/home/frutas.png',
+            colorBt:'#006837',
+            list: [
+                {
+                    id:1,
+                    title:'amarrillo',
+                    titlek:'Killu',
+                    sing:'',
+                    est:true
+                },               
+                {
+                    id:2,
+                    title:'azul',
+                    titlek:'Ankas',
+                    sing:'',
+                    est:true
+                },                
+                {
+                    id:3,
+                    title:'cafe',
+                    titlek:'Paku',
+                    sing:'',
+                    est:true
+                },                
+            ],
+            est:true        
+        },
+        {
+            id:8,
+            title:'Saludos',
+            titlek:'',
+            icon:'../../assets/imgs/home/saludos.png',
+            colorBt:'#FFFF00',
+            list: [
+                {
+                    id:1,
+                    title:'amarrillo',
+                    titlek:'Killu',
+                    sing:'',
+                    est:true
+                },               
+                {
+                    id:2,
+                    title:'azul',
+                    titlek:'Ankas',
+                    sing:'',
+                    est:true
+                },                
+                {
+                    id:3,
+                    title:'cafe',
+                    titlek:'Paku',
+                    sing:'',
+                    est:true
+                },                
+            ],
+            est:true        
+        }
     ];
 }

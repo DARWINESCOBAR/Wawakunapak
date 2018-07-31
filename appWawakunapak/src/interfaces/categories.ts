@@ -4,6 +4,7 @@ export class GroupCategory
     title:string;
     titlek?:string;
     icon?: string;
+    colorBt?:string;
     list:Category[];     
     est:boolean;
 }
