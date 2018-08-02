@@ -7,7 +7,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import {CategoryPage} from '../pages/category/category';
+import { CategoryPage } from '../pages/category/category';
+import { ProfilePage } from '../pages/profile/profile';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -22,7 +24,8 @@ import {Globals} from '../app/datos/categories_d';
     ContactPage,
     HomePage,
     TabsPage,
-    CategoryPage
+    CategoryPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {Globals} from '../app/datos/categories_d';
     ContactPage,
     HomePage,
     TabsPage,
-    CategoryPage
+    CategoryPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,

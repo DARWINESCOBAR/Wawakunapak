@@ -1,4 +1,5 @@
 import {GroupCategory} from '../../interfaces/categories';
+import {User} from '../../interfaces/user';
 export class Globals{
     categories_dt: GroupCategory []= [
         {
@@ -578,4 +579,11 @@ export class Globals{
             est:true        
         }
     ];
+    user_dt:User={
+        id:1,
+        nombre:'Ramiro Escobar',
+        edad:10,
+        puntaje:4,
+        img:'../../assets/imgs/perfil/perfil.png'        
+    }
 }

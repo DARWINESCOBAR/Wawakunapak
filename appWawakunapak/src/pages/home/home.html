@@ -9,7 +9,7 @@
   <ion-grid>
     <ion-row>
         <ion-col col-6  float-right *ngFor="let cat of categoriesthis; let i= index" >
-            <button ion-button full style="height:100px;" [style.background]="cat.colorBt" (click)="openCategory(i)" *ngIf="cat.est" >              
+            <button ion-button full style="min-height:100px;" [style.background]="cat.colorBt" (click)="openCategory(i)" *ngIf="cat.est" >              
               <img src="{{ cat.icon }}">
               </button>
           </ion-col>
