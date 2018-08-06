@@ -11,7 +11,7 @@ export class GroupGame{
 
 export class game{
     id:number;
-    question:string;
+    question?:string;
     sing?:string;
     listOption:option[];
 }

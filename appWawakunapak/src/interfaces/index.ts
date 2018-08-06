@@ -1,3 +1,3 @@
 export {GroupCategory,Category} from './categories';
-export {GroupGame,game} from './game';
+export {GroupGame,game,option} from './game';
 export {User} from './user';

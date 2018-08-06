@@ -1,7 +1,9 @@
-import {GroupCategory} from '../../interfaces/categories';
+import {GroupCategory, Category} from '../../interfaces/categories';
 import {User} from '../../interfaces/user';
-import {GroupGame} from '../../interfaces/game';
+import {GroupGame,game,option} from '../../interfaces/game';
 export class Globals{
+    
+
     categories_dt: GroupCategory []= [
         {
         id:1,
@@ -580,12 +582,59 @@ export class Globals{
             est:true        
         }
     ];
-    
+    cargarDatos= function (limitto :number) {
+        let listnew: option[]=[];
+        let numGCat=Math.floor(Math.random()*this.categories_dt.length);  
+        listnew.push({
+            id:1,
+            answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
+            isCorrect:true,
+            est:true
+        });
+        for(let i=1;i<limitto;i++){
+            let opt:option={
+                id:(i+1),
+                answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
+                isCorrect:false,
+                est:true
+            }
+            
+            listnew.forEach(element => {
+                if(opt.answer.title==element.answer.title){
+                    i--;        
+                }else
+                listnew.push(opt);
+            });            
+        }
+        return listnew;        
+    }
     listGame:GroupGame []= [
         {
             id:1,
             title:'Ordenar palabras',
             colorBt:'#662D91',            
+            listOpcion:[
+                {
+                    id:1,
+                    listOption:this.cargarDatos(2)
+                },
+                {
+                    id:2,
+                    listOption:this.cargarDatos(2)
+                },
+                {
+                    id:3,
+                    listOption:this.cargarDatos(2)
+                },
+                {
+                    id:4,
+                    listOption:this.cargarDatos(2)
+                },
+                {
+                    id:5,
+                    listOption:this.cargarDatos(2)
+                },
+            ],
             est:true
         },
         {
@@ -615,5 +664,6 @@ export class Globals{
         puntaje:4,
         img:'../../assets/imgs/perfil/perfil.png'        
     }
+    
     
 }

@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
+import {GamePage} from '../pages/game/game';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import {Globals} from '../app/datos/categories_d';
     HomePage,
     TabsPage,
     CategoryPage,
-    ProfilePage
+    ProfilePage,
+    GamePage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import {Globals} from '../app/datos/categories_d';
     HomePage,
     TabsPage,
     CategoryPage,
-    ProfilePage
+    ProfilePage,
+    GamePage
   ],
   providers: [
     StatusBar,
