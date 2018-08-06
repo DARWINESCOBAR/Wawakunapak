@@ -1,5 +1,6 @@
 import {GroupCategory} from '../../interfaces/categories';
 import {User} from '../../interfaces/user';
+import {GroupGame} from '../../interfaces/game';
 export class Globals{
     categories_dt: GroupCategory []= [
         {
@@ -579,6 +580,34 @@ export class Globals{
             est:true        
         }
     ];
+    
+    listGame:GroupGame []= [
+        {
+            id:1,
+            title:'Ordenar palabras',
+            colorBt:'#662D91',            
+            est:true
+        },
+        {
+            id:2,
+            title:'Relacionar palabras',
+            colorBt:'#006837',            
+            est:true
+        },
+        {
+            id:3,
+            title:'Relacionar Objetos',
+            colorBt:'#FFFF00',
+            est:true
+        },
+        {
+            id:4,
+            title:'Ahorcados',
+            colorBt:'662D91',
+            est:true
+        }
+    ];
+
     user_dt:User={
         id:1,
         nombre:'Ramiro Escobar',
@@ -586,4 +615,5 @@ export class Globals{
         puntaje:4,
         img:'../../assets/imgs/perfil/perfil.png'        
     }
+    
 }

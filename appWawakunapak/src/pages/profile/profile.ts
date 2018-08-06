@@ -17,8 +17,10 @@ import {User} from '../../interfaces/user';
 export class ProfilePage {
   usuario:User;
   estrellas:boolean[];
+  labelyears:string='año';
   constructor(public navCtrl: NavController, public navParams: NavParams,private gl:Globals) {
     this.usuario=gl.user_dt;    
+    this.labelyears= gl.user_dt.edad>1?'años':'año';
     this.contarEstrellaws(gl.user_dt.puntaje);
     console.log(this.estrellas);
   }

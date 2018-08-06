@@ -7,5 +7,18 @@
 </ion-header>
 
 <ion-content padding>
-<h1>Proyecto de Darwin</h1>
+  <ion-grid >
+    <ion-row>
+      <ion-col col-12 *ngFor="let it of listGame; let i= index"  >
+          <button ion-button  full style="height: 120px" [style.background]="it.colorBt" *ngIf="it.est" >
+            <ion-grid>
+              <ion-row align-items-center>
+                <ion-col><img src="{{ it.img }}" style="max-height: 70px" ></ion-col>
+                <ion-col col-8>{{ it.title }}</ion-col>
+              </ion-row>
+            </ion-grid>
+          </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
 </ion-content>
