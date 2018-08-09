@@ -15,5 +15,6 @@ export class Category{
     icon?: string;
     sing:string;
     isvocal?:boolean;
+    words?:string[];
     est:boolean;    
 }

@@ -11,7 +11,7 @@ export class AboutPage {
   listGame:GroupGame[];
   constructor(public navCtrl: NavController, private gl: Globals) {
     this.listGame=gl.listGame;
-    console.log(this.listGame);
+    //console.log(this.listGame);
   }
 
   gotoGame(i){

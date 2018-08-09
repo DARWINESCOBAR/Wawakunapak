@@ -582,7 +582,8 @@ export class Globals{
             est:true        
         }
     ];
-    cargarDatos= function (limitto :number) {
+    
+    cargarDatos = (limitto :number)   => {
         let listnew: option[]=[];
         let numGCat=Math.floor(Math.random()*this.categories_dt.length);  
         listnew.push({
@@ -590,21 +591,28 @@ export class Globals{
             answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
             isCorrect:true,
             est:true
-        });
-        for(let i=1;i<limitto;i++){
+        });      
+        for(let i=2;i<=limitto;i++){
+          let existnow=false;
             let opt:option={
-                id:(i+1),
+                id:(i),
                 answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
                 isCorrect:false,
                 est:true
-            }
-            
-            listnew.forEach(element => {
+            } 
+            listnew.forEach(async  element=> {
                 if(opt.answer.title==element.answer.title){
-                    i--;        
-                }else
+                  existnow=true;              
+                }            
+            });   
+           Promise.all(listnew).then(  values =>{
+              if(existnow){
+                i--;
+              }else{
                 listnew.push(opt);
-            });            
+              }
+            }            
+           )
         }
         return listnew;        
     }
@@ -612,9 +620,19 @@ export class Globals{
         {
             id:1,
             title:'Ordenar palabras',
-            colorBt:'#662D91',            
+            colorBt:'#662D91',     
+            listOpcion:[{
+                id:1,
+                listOption:this.cargarDatos(10)
+                }],       
+            est:true
+        },
+        {
+            id:2,
+            title:'Relacionar palabras',
+            colorBt:'#006837',  
             listOpcion:[
-                {
+            /*    {
                     id:1,
                     listOption:this.cargarDatos(2)
                 },
@@ -633,14 +651,8 @@ export class Globals{
                 {
                     id:5,
                     listOption:this.cargarDatos(2)
-                },
-            ],
-            est:true
-        },
-        {
-            id:2,
-            title:'Relacionar palabras',
-            colorBt:'#006837',            
+                },**/
+            ],          
             est:true
         },
         {

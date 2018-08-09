@@ -8,29 +8,43 @@
 
   <ion-navbar>
     <ion-title>{{ item.title }}</ion-title>
+    <div padding>
+        <ion-segment [(ngModel)]="words">
+          <div  *ngFor="let it of categorias; let i= index " >
+            <ion-segment-button  *ngIf="i<3" value="{{ i }}">
+                {{ it.titlek }}
+            </ion-segment-button>              
+          </div>
+        </ion-segment>
+      </div>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <!--<div [ngSwitch]="item.listOpcion">
-    <div *ngFor="let it of item.listOpcion">
-        <ion-grid *ngSwitchCase="it.id">
-            <ion-row>
-              <ion-col>
-                {{ it.question }}
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col *ngFor="let ot of it.listOption">
-               {{ ot }}
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-    </div>
-      
-  </div>-->
-  
-
+    
+  <div [ngSwitch]="words">
+      <div *ngFor="let it of categorias; let i= index " >
+        <div *ngIf="i<3">
+            <ion-grid  *ngSwitchCase="i">     
+                <ion-row align-items-center>
+                  <ion-col class="img-select" >
+                   <img src="{{ it.icon }}"  >
+                  </ion-col>
+                </ion-row>
+                <ion-row class="wordscls" align-items-center>
+                  <ion-col col-2 *ngFor="let wit of it.words" >
+                    <button ion-button outline value="{{ wit }}">{{ wit }}</button>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="wordscls" align-items-center>
+                    <ion-col col-2 *ngFor="let wit of it.words" >
+                      <button ion-button block value="{{ wit }}">{{ wit }}</button>
+                    </ion-col>
+                  </ion-row>
+              </ion-grid >
+        </div>        
+      </div>
+  </div>
 </ion-content>

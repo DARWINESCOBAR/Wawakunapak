@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {GroupGame, game, option} from '../../interfaces/index';
+import {GroupGame, game, option,Category, GroupCategory} from '../../interfaces/index';
+import {Globals} from '../../app/datos/categories_d';
 
 /**
  * Generated class for the GamePage page.
@@ -15,16 +16,62 @@ import {GroupGame, game, option} from '../../interfaces/index';
   templateUrl: 'game.html',
 })
 export class GamePage {
-  itemCorrec:option;
+  words:any=1;
   item:GroupGame;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.item=navParams.data.item;
+  listcat:GroupCategory[];
+  categorias:Category[];  
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals) {
+    this.item=navParams.data.item;  
+    this.listcat=this.gl.categories_dt;
+    Promise.all(this.listcat).then(()=>{ 
+      this.llenarDatos(this.listcat);      
+    }).then(
+      ()=>{
+        this.mesclarDatos();
+      }      
+    )
+    ;      
+  }
+  public llenarDatos(categoriasgp){
+    this.categorias=[];   
+    for (let index = 1; index < categoriasgp.length; index++) {     
+     for (let jindex = 0; jindex < categoriasgp[index].list.length; jindex++) {       
+        categoriasgp[index].list[jindex].words=this.vaciarCajas(categoriasgp[index].list[jindex].titlek);
+        this.categorias.push(categoriasgp[index].list[jindex]);          
+     }
+    }
+  }
+  public mesclarDatos(){
+    let i,j,k;
+    for (i = this.categorias.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      k = this.categorias[i - 1];
+      this.categorias[i - 1] = this.categorias[j];
+      this.categorias[j] = k;
+    }
+  }
+  public presentarDatos(limitto){
+    let cats: Category[];
+    for (let index = 0; index <limitto; index++) {
+      cats.push(this.categorias[index]);      
+    }
+    return cats;
+  }
+
+  public  vaciarCajas (palabra) {
+    let espacioslen = palabra.length;
+    let espacios = new Array;
+
+    for (let i = 0; i < espacioslen; i++) {
+      espacios.push('_');      
+    }
+    return espacios;
     
-    console.log(this.item);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GamePage');
+    
   }
 
 }
