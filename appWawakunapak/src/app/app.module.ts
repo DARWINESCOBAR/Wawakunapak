@@ -13,10 +13,11 @@ import {GamePage} from '../pages/game/game';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { Vibration } from '@ionic-native/vibration';
 
 //Datos
 import {Globals} from '../app/datos/categories_d';
+import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import {Globals} from '../app/datos/categories_d';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Globals
+    Globals,
+    CetegoriasProvider,
+    Vibration
   ]
 })
 export class AppModule {}

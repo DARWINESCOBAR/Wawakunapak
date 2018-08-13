@@ -16,5 +16,6 @@ export class Category{
     sing:string;
     isvocal?:boolean;
     words?:string[];
-    est:boolean;    
+    wordstitle?:string[];
+     est:boolean;    
 }

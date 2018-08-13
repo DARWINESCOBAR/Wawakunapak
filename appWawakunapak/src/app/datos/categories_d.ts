@@ -583,48 +583,13 @@ export class Globals{
         }
     ];
     
-    cargarDatos = (limitto :number)   => {
-        let listnew: option[]=[];
-        let numGCat=Math.floor(Math.random()*this.categories_dt.length);  
-        listnew.push({
-            id:1,
-            answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
-            isCorrect:true,
-            est:true
-        });      
-        for(let i=2;i<=limitto;i++){
-          let existnow=false;
-            let opt:option={
-                id:(i),
-                answer:this.categories_dt[numGCat].list[Math.floor(Math.random()*this.categories_dt[numGCat].list.length)],
-                isCorrect:false,
-                est:true
-            } 
-            listnew.forEach(async  element=> {
-                if(opt.answer.title==element.answer.title){
-                  existnow=true;              
-                }            
-            });   
-           Promise.all(listnew).then(  values =>{
-              if(existnow){
-                i--;
-              }else{
-                listnew.push(opt);
-              }
-            }            
-           )
-        }
-        return listnew;        
-    }
+   
     listGame:GroupGame []= [
         {
             id:1,
             title:'Ordenar palabras',
             colorBt:'#662D91',     
-            listOpcion:[{
-                id:1,
-                listOption:this.cargarDatos(10)
-                }],       
+            listOpcion:[],       
             est:true
         },
         {
@@ -632,26 +597,6 @@ export class Globals{
             title:'Relacionar palabras',
             colorBt:'#006837',  
             listOpcion:[
-            /*    {
-                    id:1,
-                    listOption:this.cargarDatos(2)
-                },
-                {
-                    id:2,
-                    listOption:this.cargarDatos(2)
-                },
-                {
-                    id:3,
-                    listOption:this.cargarDatos(2)
-                },
-                {
-                    id:4,
-                    listOption:this.cargarDatos(2)
-                },
-                {
-                    id:5,
-                    listOption:this.cargarDatos(2)
-                },**/
             ],          
             est:true
         },
@@ -664,7 +609,7 @@ export class Globals{
         {
             id:4,
             title:'Ahorcados',
-            colorBt:'662D91',
+            colorBt:'#ED1C24',
             est:true
         }
     ];

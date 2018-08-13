@@ -8,43 +8,49 @@
 
   <ion-navbar>
     <ion-title>{{ item.title }}</ion-title>
-    <div padding>
-        <ion-segment [(ngModel)]="words">
-          <div  *ngFor="let it of categorias; let i= index " >
-            <ion-segment-button  *ngIf="i<3" value="{{ i }}">
-                {{ it.titlek }}
-            </ion-segment-button>              
-          </div>
-        </ion-segment>
-      </div>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    
+    <ion-fab top left>
+        <button ion-fab>{{ words + 1 }} </button>      
+    </ion-fab>
   <div [ngSwitch]="words">
       <div *ngFor="let it of categorias; let i= index " >
-        <div *ngIf="i<3">
+        <div *ngIf="i<limitto">
             <ion-grid  *ngSwitchCase="i">     
                 <ion-row align-items-center>
                   <ion-col class="img-select" >
-                   <img src="{{ it.icon }}"  >
+                   <img src="{{ it.icon }}" style="max-width: 80%" >
                   </ion-col>
                 </ion-row>
                 <ion-row class="wordscls" align-items-center>
-                  <ion-col col-2 *ngFor="let wit of it.words" >
-                    <button ion-button outline value="{{ wit }}">{{ wit }}</button>
+                  <ion-col col-2 *ngFor="let wit of it.words, let k = index" >
+                    <button ion-button outline value="{{ wit }}" (click)="eliminarLetra(i,k)">{{ wit }}</button>
                   </ion-col>
                 </ion-row>
                 <ion-row class="wordscls" align-items-center>
-                    <ion-col col-2 *ngFor="let wit of it.words" >
-                      <button ion-button block value="{{ wit }}">{{ wit }}</button>
+                    <ion-col col-2 *ngFor="let wit of it.wordstitle;let j = index" >
+                      <button ion-button block value="{{ wit }}" (click)="elegirLetra(wit,i)" >{{ wit }}</button>
                     </ion-col>
                   </ion-row>
               </ion-grid >
         </div>        
       </div>
   </div>
+  
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-item>
+        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" > 
+          <ion-badge range-left >1</ion-badge>
+          <ion-badge range-right >{{ limitto }}</ion-badge>
+        </ion-range>
+      </ion-item>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GroupCategory} from '../../interfaces/categories';
+import { AboutPage } from '../about/about';
 /**
  * Generated class for the CategoryPage page.
  *
@@ -26,5 +27,7 @@ export class CategoryPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');
   }
-
+  gotoGames(){
+    this.navCtrl.push(AboutPage);
+  }
 }

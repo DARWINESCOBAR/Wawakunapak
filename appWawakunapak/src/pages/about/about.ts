@@ -15,6 +15,9 @@ export class AboutPage {
   }
 
   gotoGame(i){
-    this.navCtrl.push(GamePage,{item:this.listGame[i]});
+    switch(i){
+      case 0:
+      this.navCtrl.push(GamePage,{item:this.listGame[i]});
+    }    
   }
 }

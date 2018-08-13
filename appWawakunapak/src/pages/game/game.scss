@@ -8,4 +8,20 @@ page-game {
 .wordscls{
     justify-content: center;
 }
+.exitoMg{
+    background-color: rgba(165,234,131,0.71)
+}
+.errorMg{
+    $toast-md-title-color:rgb(237,25,36);
+    color: rgb(237, 28, 36);
+    .toast-wrapper{
+        background-color:  rgba(237, 28, 36, 0.65);
+    }
+   
+}
+ion-footer{
+    .toolbar-background-md{
+    background-color: white !important;
+    }
+}
 }
