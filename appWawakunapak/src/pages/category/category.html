@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar >
-    <ion-title >{{ item.title }} - {{ item.titlek }} </ion-title>   
+    <ion-title >{{ item.title }} <br> {{ item.titlek }} </ion-title>   
 
   </ion-navbar>
   <div *ngIf="!isVocabulario">
@@ -27,7 +27,8 @@
             <ion-grid>
               <ion-row align-items-center>
                 <ion-col><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>
-                <ion-col col-8>{{ it.titlek }}</ion-col>
+                <ion-col col-8>{{ it.titlek }} <br> <small>{{ it.title }}</small> </ion-col>
+                
               </ion-row>
             </ion-grid>
           </button>

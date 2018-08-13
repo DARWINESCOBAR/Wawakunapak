@@ -577,7 +577,22 @@ export class Globals{
             icon:'../../assets/imgs/home/saludos.png',
             colorBt:'#FFFF00',
             list: [
-                            
+                {
+                    id:1,
+                    title:'hola',
+                    titlek:'Imanalla',
+                    icon:'../../assets/imgs/categorias/papaya.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:2,
+                    title:'¿Como estas tú?',
+                    titlek:'Imanallatak kanki',
+                    icon:'../../assets/imgs/categorias/papaya.png',
+                    sing:'',
+                    est:true
+                }               
             ],
             est:true        
         }
@@ -618,7 +633,7 @@ export class Globals{
         id:1,
         nombre:'Ramiro Escobar',
         edad:10,
-        puntaje:4,
+        puntaje:3,
         img:'../../assets/imgs/perfil/perfil.png'        
     }
     
