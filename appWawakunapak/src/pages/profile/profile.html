@@ -29,6 +29,11 @@
       <h2>{{ usuario.edad }} {{ labelyears }} </h2>
     </ion-col>
   </ion-row>
+  <ion-row >
+      <ion-col text-center>
+          <button ion-button color="greendark" (click)="presentPrompt()" ><ion-icon name="md-create"></ion-icon> &nbsp;&nbsp;&nbsp; Editar</button>
+      </ion-col>    
+    </ion-row>
   <ion-row text-center>
     <ion-col *ngFor="let it of estrellas" >
      
@@ -37,5 +42,6 @@
             
     </ion-col>
   </ion-row>
+  
 </ion-grid>
 </ion-content>
