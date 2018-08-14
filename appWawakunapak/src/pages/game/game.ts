@@ -109,7 +109,7 @@ export class GamePage {
     let toast = this.toastCtrl.create({
       message: messa,
       duration: duration,
-      position: 'top',
+      position: 'middle',
       cssClass:classcss
     });
   

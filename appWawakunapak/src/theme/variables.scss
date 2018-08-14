@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  greendark:  #006837
 );
 
 
@@ -62,6 +63,12 @@ $fab-md-background-color:#FF7900;
 $toolbar-md-active-color:#ffffff;
 $button-md-outline-background-color-activated:#FF7900;
 $button-md-background-color: rgb(255, 255, 0);
+$range-md-knob-width:30px;
+$range-md-bar-height:20px;
+$range-md-padding-horizontal:0px;
+$range-md-padding-vertical:0px;
+$range-md-slider-height:20px;
+$button-md-text-color:#fff;
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here

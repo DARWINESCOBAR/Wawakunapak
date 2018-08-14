@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-    <ion-fab top left>
+    <ion-fab top left *ngIf="(words+1)!=11" >
         <button ion-fab>{{ words + 1 }} </button>      
     </ion-fab>
   <div [ngSwitch]="words">
@@ -27,7 +27,7 @@
                   </ion-col>
                 </ion-row>
                 <ion-row class="wordscls" align-items-center>
-                  <ion-col col-2 *ngFor="let wit of it.words, let k = index" >
+                  <ion-col col-2 *ngFor="let wit of it.words, let k = index" align-items-center >
                     <button ion-button outline value="{{ wit }}" (click)="eliminarLetra(i,k)">{{ wit }}</button>
                   </ion-col>
                 </ion-row>
@@ -46,9 +46,9 @@
   <ion-toolbar>
     <ion-title>
       <ion-item>
-        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" > 
-          <ion-badge range-left >1</ion-badge>
-          <ion-badge range-right >{{ limitto }}</ion-badge>
+        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" color="greendark" > 
+          <ion-badge range-left color="greendark" >1</ion-badge>
+          <ion-badge range-right color="greendark">{{ limitto }}</ion-badge>
         </ion-range>
       </ion-item>
     </ion-title>
