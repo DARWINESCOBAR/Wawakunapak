@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Vibration } from '@ionic-native/vibration';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import {GroupGame,game} from '../../interfaces/index';
+import {Globals} from '../../app/datos/categories_d';
 /**
  * Generated class for the Game2Page page.
  *
@@ -14,8 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'game2.html',
 })
 export class Game2Page {
+  item:GroupGame;
+  words:number=1;
+  limitto:number=10;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration) {
+    this.item=this.navParams.data.item;
   }
 
   ionViewDidLoad() {

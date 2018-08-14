@@ -10,14 +10,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
 import {GamePage} from '../pages/game/game';
+import {Game2Page} from '../pages/game2/game2';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
+import {NativeAudio} from '@ionic-native/native-audio';
 
 //Datos
 import {Globals} from '../app/datos/categories_d';
 import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
+import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
     TabsPage,
     CategoryPage,
     ProfilePage,
-    GamePage
+    GamePage,
+    Game2Page
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
     TabsPage,
     CategoryPage,
     ProfilePage,
-    GamePage
+    GamePage,
+    Game2Page
   ],
   providers: [
     StatusBar,
@@ -56,7 +61,9 @@ import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Globals,
     CetegoriasProvider,
-    Vibration
+    Vibration,
+    NativeAudio,
+    SmartSoundProvider
   ]
 })
 export class AppModule {}

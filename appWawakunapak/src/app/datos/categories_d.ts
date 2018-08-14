@@ -186,7 +186,7 @@ export class Globals{
                     title:'uno',
                     titlek:'Shunk',
                     icon:'../../assets/imgs/categorias/1.png',
-                    sing:'',
+                    sing:'assets/sounds/prueba.mp3',
                     est:true
                 },
                 {
@@ -618,7 +618,7 @@ export class Globals{
         {
             id:3,
             title:'Relacionar Objetos',
-            colorBt:'#FFFF00',
+            colorBt:'#FF7900',
             est:true
         },
         {

@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <ion-fab top left *ngIf="(words+1)!=11" >
-        <button ion-fab>{{ words + 1 }} </button>      
+        <button ion-fab color="morado" >{{ words + 1 }} </button>      
     </ion-fab>
   <div [ngSwitch]="words">
       <div *ngFor="let it of categorias; let i= index " >
@@ -46,9 +46,9 @@
   <ion-toolbar>
     <ion-title>
       <ion-item>
-        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" color="greendark" > 
-          <ion-badge range-left color="greendark" >1</ion-badge>
-          <ion-badge range-right color="greendark">{{ limitto }}</ion-badge>
+        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" color="morado" > 
+          <ion-badge range-left color="morado" >1</ion-badge>
+          <ion-badge range-right color="morado">{{ limitto }}</ion-badge>
         </ion-range>
       </ion-item>
     </ion-title>

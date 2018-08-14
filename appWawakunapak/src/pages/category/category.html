@@ -23,7 +23,7 @@
   <ion-grid *ngIf="isVocabulario">
     <ion-row>
       <ion-col col-12 *ngFor="let it of item.list; let i= index"  >
-          <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est" >
+          <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est"(click)="playsingtitle(it.title)"  >
             <ion-grid>
               <ion-row align-items-center>
                 <ion-col><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>
@@ -39,7 +39,7 @@
       <ion-grid *ngSwitchCase="'vocales'">
           <ion-row *ngFor="let it of item.list; let i= index">
               <ion-col col-12 *ngIf="it.est && it.isvocal" >
-                  <button ion-button block style="height: 120px" [outline]="true">
+                  <button ion-button block style="height: 120px" [outline]="true" (click)="playsingtitle(it.title)" >
                     <ion-grid>
                       <ion-row align-items-center>
                         <ion-col col-12><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>                      </ion-row>
@@ -52,7 +52,7 @@
         <ion-grid *ngSwitchCase="'abecedario'">
             <ion-row>
                 <ion-col col-4 *ngFor="let it of item.list; let i= index">
-                    <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est" >
+                    <button ion-button block style="height: 120px" [outline]="true" *ngIf="it.est"  (click)="playsingtitle(it.title)"  >
                       <ion-grid>
                         <ion-row align-items-center>
                           <ion-col col-12><img src="{{ it.icon }}" style="max-height: 70px" ></ion-col>                      </ion-row>

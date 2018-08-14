@@ -10,7 +10,7 @@
   <ion-grid >
     <ion-row>
       <ion-col col-12 *ngFor="let it of listGame ; let i= index "  >
-          <button ion-button  full style="height: 120px" [style.background]="it.colorBt" *ngIf="it.est" (click)="gotoGame(i)" >
+          <button ion-button  full style="height: 90px" [style.background]="it.colorBt" *ngIf="it.est" (click)="gotoGame(i)" >
             <ion-grid>
               <ion-row align-items-center>
                 <ion-col><img src="{{ it.img }}" style="max-height: 70px" ></ion-col>
