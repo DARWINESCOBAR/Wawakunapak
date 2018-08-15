@@ -17,8 +17,7 @@ export class game{
 }
 export class option {
     id:number;
-    answer:Category; 
-    palabra?:string[];       
+    answer:Category;        
     obs?:string;    
     compartida?:number;
     isCorrect?:boolean;

@@ -40,9 +40,11 @@ export class GamePage {
     this.categorias=[];   
     for (let index = 1; index < categoriasgp.length; index++) {     
      for (let jindex = 0; jindex < categoriasgp[index].list.length; jindex++) {       
-        categoriasgp[index].list[jindex].words=this.vaciarCajas(categoriasgp[index].list[jindex].titlek);
-        categoriasgp[index].list[jindex].wordstitle=this.separarLetra(categoriasgp[index].list[jindex].titlek);
-        this.categorias.push(categoriasgp[index].list[jindex]);          
+       if(categoriasgp[index].list[jindex].est){
+          categoriasgp[index].list[jindex].words=this.vaciarCajas(categoriasgp[index].list[jindex].titlek);
+          categoriasgp[index].list[jindex].wordstitle=this.separarLetra(categoriasgp[index].list[jindex].titlek);
+          this.categorias.push(categoriasgp[index].list[jindex]);  
+       }                
      }
     }
   }

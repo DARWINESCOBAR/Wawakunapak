@@ -15,4 +15,20 @@ page-game2 {
         }
         
     }
+    h1{
+        text-align: center;
+        color: #662D91;
+    }
+    .button-outline-md{
+        height: 120px;
+        border-color: #006837;
+    }
+    .col{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+    }
+    
+    
 }

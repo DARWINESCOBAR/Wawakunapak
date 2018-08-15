@@ -14,7 +14,31 @@
 
 
 <ion-content padding>
-
+    <ion-fab top left *ngIf="(words+1)!=11" >
+        <button ion-fab color="greendark" >{{ words + 1 }} </button>      
+    </ion-fab>
+<div [ngSwitch]="words">
+  <div *ngFor="let it of games; let i=index">
+    <div *ngIf="i<limitto">
+      <ion-grid *ngSwitchCase="i">
+        <ion-row align-items-center>          
+          <ion-col>
+            <div *ngFor="let opt of it.listOption">
+              <h1 *ngIf="opt.isCorrect">{{ opt.answer.titlek }}</h1>
+            </div>            
+          </ion-col>
+        </ion-row>
+        <ion-row align-items-center>
+          <ion-col col-6 *ngFor="let opts of it.listOption" >
+            <button ion-button outline (click)= "elegiroption(opts.isCorrect)" >
+              <img src="{{ opts.answer.icon}}" style="max-width: 80%"  >
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</div>
 </ion-content>
 <ion-footer>
     <ion-toolbar>

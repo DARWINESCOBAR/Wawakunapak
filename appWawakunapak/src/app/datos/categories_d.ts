@@ -583,7 +583,7 @@ export class Globals{
                     titlek:'Imanalla',
                     icon:'../../assets/imgs/categorias/papaya.png',
                     sing:'',
-                    est:true
+                    est:false
                 },
                 {
                     id:2,
@@ -591,7 +591,7 @@ export class Globals{
                     titlek:'Imanallatak kanki',
                     icon:'../../assets/imgs/categorias/papaya.png',
                     sing:'',
-                    est:true
+                    est:false
                 }               
             ],
             est:true        
