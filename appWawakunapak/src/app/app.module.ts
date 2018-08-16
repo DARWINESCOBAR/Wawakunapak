@@ -22,6 +22,7 @@ import {NativeAudio} from '@ionic-native/native-audio';
 import {Globals} from '../app/datos/categories_d';
 import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
 import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
       backButtonIcon: 'ios-arrow-back',
       iconMode:'ios'
 
-    })
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
