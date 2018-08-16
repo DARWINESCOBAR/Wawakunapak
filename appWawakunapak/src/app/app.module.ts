@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CategoryPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
 import {GamePage} from '../pages/game/game';
+import {MsghomePage} from '../pages/msghome/msghome';
 import {Game2Page} from '../pages/game2/game2';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -32,7 +33,8 @@ import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
     CategoryPage,
     ProfilePage,
     GamePage,
-    Game2Page
+    Game2Page,
+    MsghomePage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
     CategoryPage,
     ProfilePage,
     GamePage,
-    Game2Page
+    Game2Page,
+    MsghomePage
   ],
   providers: [
     StatusBar,
