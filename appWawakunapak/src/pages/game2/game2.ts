@@ -20,14 +20,19 @@ export class Game2Page {
   words:number=1;
   limitto:number=10;
   issing:boolean=false;
+  color:any="greendark";
   games:game[]=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
     this.item=this.navParams.data.item;
-    if(this.item.id==2){
-      this.issing=true;
-    }else{
+    console.log(this.item);
+    if(this.item.id==3){
       this.issing=false;
+      this.color="naranja";
+    }else{
+      this.issing=true;
+      this.color="greendark";
+      
     }
     this.games=this.llenarDatos(gl.categories_dt,3);
     console.log( this.games);

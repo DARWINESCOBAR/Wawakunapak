@@ -23,6 +23,9 @@ export class AboutPage {
       case 1:
         this.navCtrl.push(Game2Page,{item:this.listGame[i]});
         break;
+      case 2:
+        this.navCtrl.push(Game2Page,{item:this.listGame[i]});
+        break;
     }    
   }
 }
