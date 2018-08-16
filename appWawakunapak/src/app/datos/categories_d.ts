@@ -603,14 +603,16 @@ export class Globals{
         {
             id:1,
             title:'Ordenar palabras',
-            colorBt:'#662D91',     
+            colorBt:'#662D91',  
+            img:'../../assets/imgs/games/1.png'   ,
             listOpcion:[],       
             est:true
         },
         {
             id:2,
             title:'Relacionar palabras',
-            colorBt:'#006837',  
+            colorBt:'#006837', 
+            img:'../../assets/imgs/games/2.png'   , 
             listOpcion:[
             ],          
             est:true
@@ -619,11 +621,13 @@ export class Globals{
             id:3,
             title:'Relacionar Objetos',
             colorBt:'#FF7900',
+            img:'../../assets/imgs/games/3.png'   ,
             est:true
         },
         {
             id:4,
             title:'Ahorcados',
+            img:'../../assets/imgs/games/4.png'   ,
             colorBt:'#ED1C24',
             est:true
         }
