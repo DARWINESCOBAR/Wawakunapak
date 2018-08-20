@@ -1,0 +1,29 @@
+page-game3 {
+    ion-footer{
+        .toolbar-background-md{
+        background-color: white !important;
+        }
+        .item-md.item-block .item-inner{
+            border-bottom: 0ch;
+        }
+        .range-md .range-slider{
+            height: 40px;
+           // z-index: -1;
+        }
+        .range-md .range-bar{
+          border-radius: 5px;
+        }
+        
+    }
+    h1,h2{
+        text-align: center;
+        color: #ED1C24;
+    }
+    .button-outline-md{
+        height: 60px;
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+
+}

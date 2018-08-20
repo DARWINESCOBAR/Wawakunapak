@@ -1,0 +1,53 @@
+<!--
+  Generated template for the Game3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ item.title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-fab top left *ngIf="(words+1)!=11" >
+    <button ion-fab color="rojo" >{{ words }} </button>      
+</ion-fab>
+<div [ngSwitch]="words">
+    <div *ngFor="let it of listcat; let i= index">
+        
+        <div *ngIf="i<=limitto && it.id!=1">
+          <ion-grid *ngSwitchCase="i"> 
+            <ion-row>              
+              <ion-col col-12> <h1>{{ it.titlek.toLocaleUpperCase() }}</h1>  <h2>{{ it.title.toLocaleUpperCase() }}</h2> </ion-col>
+            </ion-row>                     
+              <ion-row >               
+                <ion-col col-4 *ngFor="let itc of it.list; let i= index">
+                    <button ion-button outline ><img src="{{ itc.icon}}" style="max-width: 50%"  ></button>
+                </ion-col> 
+                <ion-col col-4 *ngFor="let its of it.list; let i= index">
+                    <button ion-button outline >{{ its.titlek }} </button>
+                </ion-col>
+              </ion-row>
+           
+          </ion-grid>
+        </div>
+      </div>
+</div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-item>
+        <ion-range min="1" max="{{ limitto }}" step="1" [(ngModel)]="words" color="rojo" > 
+          <ion-badge range-left color="rojo" >1</ion-badge>
+          <ion-badge range-right color="rojo">{{ limitto }}</ion-badge>
+        </ion-range>
+      </ion-item>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <ion-fab top left *ngIf="(words+1)!=11" >
-        <button ion-fab color="{{ color }}" >{{ words + 1 }} </button>      
+        <button ion-fab color="{{ color }}" >{{ words  }} </button>      
     </ion-fab>
 <div [ngSwitch]="words">
   <div *ngFor="let it of games; let i=index">

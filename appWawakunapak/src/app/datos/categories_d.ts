@@ -9,7 +9,7 @@ export class Globals{
         id:1,
         title:'Vocabulario',
         colorBt:'#662D91',
-        icon:'../../assets/imgs/home/vocabulario.png',        
+        icon:'..    /../assets/imgs/home/vocabulario.png',        
         list: [
             {
                 id:1,
@@ -73,7 +73,7 @@ export class Globals{
                 icon:'../../assets/imgs/categorias/ll.png',
                 sing:'',
                 isvocal:false,
-                est:false
+                est:true
             },
             {
                 id:9,
@@ -94,10 +94,10 @@ export class Globals{
             {
                 id:11,
                 title:'Ñ',
-                icon:'../../assets/imgs/categorias/nie.png',
+                icon:'../../assets/imgs/categorias/nn.png',
                 sing:'',
                 isvocal:false,
-                est:false
+                est:true
             },
             {
                 id:12,
@@ -573,26 +573,51 @@ export class Globals{
         {
             id:8,
             title:'Saludos',
-            titlek:'',
+            titlek:'NAPAYKUNA',
             icon:'../../assets/imgs/home/saludos.png',
             colorBt:'#FFFF00',
             list: [
                 {
                     id:1,
                     title:'hola',
-                    titlek:'Imanalla',
-                    icon:'../../assets/imgs/categorias/papaya.png',
+                    titlek:'IMANALLA',
+                    icon:'../../assets/imgs/categorias/hola.png',
                     sing:'',
-                    est:false
+                    est:true
                 },
                 {
                     id:2,
-                    title:'¿Como estas tú?',
-                    titlek:'Imanallatak kanki',
-                    icon:'../../assets/imgs/categorias/papaya.png',
+                    title:'Buenos Días',
+                    titlek:'ALLI PUNCHA',
+                    icon:'../../assets/imgs/categorias/dia.png',
                     sing:'',
-                    est:false
-                }               
+                    est:true
+                }  ,
+                {
+                    id:3,
+                    title:'Buenas Tardes',
+                    titlek:'ALLI chishi',
+                    icon:'../../assets/imgs/categorias/tarde.png',
+                    sing:'',
+                    est:true
+                },
+                {
+                    id:4,
+                    title:'Buenas Noche',
+                    titlek:'ALLI TUTA',
+                    icon:'../../assets/imgs/categorias/noche.png',
+                    sing:'',
+                    est:true
+                } ,
+                {
+                    id:5,
+                    title:'Adios',
+                    titlek:'MINCHAKAMA',
+                    icon:'../../assets/imgs/categorias/adios.png',
+                    sing:'',
+                    est:true
+                }       
+
             ],
             est:true        
         }

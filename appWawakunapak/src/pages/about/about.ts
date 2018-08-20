@@ -4,6 +4,7 @@ import { Globals } from '../../app/datos/categories_d';
 import {GroupGame,game} from '../../interfaces/index';
 import {GamePage} from '../game/game';
 import {Game2Page} from '../game2/game2';
+import {Game3Page} from '../game3/game3';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -26,6 +27,9 @@ export class AboutPage {
       case 2:
         this.navCtrl.push(Game2Page,{item:this.listGame[i]});
         break;
+      case 3:
+      this.navCtrl.push(Game3Page,{item:this.listGame[i]});
     }    
   }
 }
+
