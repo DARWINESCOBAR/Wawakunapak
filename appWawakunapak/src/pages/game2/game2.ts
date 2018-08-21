@@ -25,7 +25,7 @@ export class Game2Page {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
     this.item=this.navParams.data.item;
-    console.log(this.item);
+   // console.log(this.item);
     if(this.item.id==3){
       this.issing=false;
       this.color="naranja";
@@ -35,7 +35,7 @@ export class Game2Page {
       
     }
     this.games=this.llenarDatos(gl.categories_dt,3);
-    console.log( this.games);
+    //console.log( this.games);
   }
 
   ionViewDidLoad() {
@@ -83,15 +83,19 @@ export class Game2Page {
           
       }
     });
+
    // console.log(options);
 
     for (let index = 1; index <indcomp; index++) {       
       games.push({
         id:index,
         listOption:options.filter(option=> option.compartida==index)
-      });
+      });      
     }    
-   // console.log(games);
+    games.forEach(game => {
+      game.listOption= this.mesclarDatos(game.listOption);
+    });
+    console.log(games);
    return games; 
   }
   private elegiroption(isCorrect:boolean){
@@ -100,7 +104,7 @@ export class Game2Page {
       this.words++;
     }else{
       this.presentToast("Intentalo de nuevo :(",1000,"errorMg");
-      this.vibration.vibrate(1000);
+      this.vibration.vibrate([2000,1000,2000]);
     }
   }
 
@@ -118,7 +122,16 @@ export class Game2Page {
   
     toast.present();
   }
-
+  public mesclarDatos(arreglo:any[]){
+    let i,j,k;
+    for (i = arreglo.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      k = arreglo[i - 1];
+      arreglo[i - 1] = arreglo[j];
+      arreglo[j] = k;
+    }
+    return  arreglo;
+  }
 
 
 }

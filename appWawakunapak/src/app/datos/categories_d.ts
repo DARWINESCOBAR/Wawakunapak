@@ -8,6 +8,7 @@ export class Globals{
         {
         id:1,
         title:'Vocabulario',
+        titlek:'',
         colorBt:'#662D91',
         icon:'..    /../assets/imgs/home/vocabulario.png',        
         list: [
@@ -572,7 +573,7 @@ export class Globals{
         },
         {
             id:8,
-            title:'Saludos',
+            title:'SALUDOS',
             titlek:'NAPAYKUNA',
             icon:'../../assets/imgs/home/saludos.png',
             colorBt:'#FFFF00',

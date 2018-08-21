@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ item.title }}</ion-title>
+    <ion-title>{{ item.title.toLocaleUpperCase() }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,7 +20,7 @@
 <div [ngSwitch]="words">
     <div *ngFor="let it of listcat; let i= index">
         
-        <div *ngIf="i<=limitto && it.id!=1">
+        <div *ngIf="i<=limitto ">
           <ion-grid *ngSwitchCase="i"> 
             <ion-row>              
               <ion-col col-12> <h1>{{ it.titlek.toLocaleUpperCase() }}</h1>  <h2>{{ it.title.toLocaleUpperCase() }}</h2> </ion-col>

@@ -20,40 +20,37 @@ export class Game3Page {
   words:number=1;
   option:number=6;
   limitto:number=4;
-  listcat:GroupCategory[];
+  listcat:GroupCategory[]=[];
   categorias:Category[];
   options:any[];
   constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
     this.item=this.navParams.data.item;
-    this.listcat= this.mesclarDatos(this.gl.categories_dt) ; 
-    
-    this.quitarVocabulario();
-    console.log(this.listcat);
-   /* Promise.all(this.listcat).then(()=>{ 
-      this.llenarDatos(this.listcat);      
-    }).then(
-      ()=>{
-       this.categorias= this.mesclarDatos(this.categorias);
-      }      
-    ).then(()=>{
-      console.log(this.categorias); 
-    })
-    ;  */
-
+    this.listcat=this.gl.categories_dt.slice();
+    Promise.all(this.listcat).then(()=>{
+      this.listcat= this.mesclarDatos(this.listcat); 
+    }).then(()=>{
+      this.quitarVocabulario();    
+    }).then(()=>{
+      /*this.listcat.forEach(listc => {
+        listc.list = this.mesclarDatos(listc.list);
+      });*/
+      console.log(this.listcat);
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Game3Page');
+   
   }
   public quitarVocabulario(){
-    let indexj:number=-1;
+    let indexj:number=-1;   
     for (let index = 0; index < this.listcat.length; index++) {
       if(this.listcat[index].id==1) {
         indexj=index;
       }  
     }
     if(indexj>-1){
-      this.listcat.splice(indexj,1);
+      this.listcat.splice(indexj,1);     
     }
   }
 

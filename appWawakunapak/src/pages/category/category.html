@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar >
-    <ion-title >{{ item.title }} <br> {{ item.titlek }} </ion-title>   
+    <ion-title >{{ item.title.toLocaleUpperCase() }} <br> {{ item.titlek.toLocaleUpperCase() }} </ion-title>   
 
   </ion-navbar>
   <div *ngIf="!isVocabulario">
