@@ -3,6 +3,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
+import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
 /**
  * Generated class for the Game2Page page.
  *
@@ -18,24 +19,23 @@ import {Globals} from '../../app/datos/categories_d';
 export class Game2Page {
   item:GroupGame;
   words:number=1;
-  limitto:number=10;
+  limitto:number=9;
   issing:boolean=false;
   color:any="greendark";
   games:game[]=[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider ) {
     this.item=this.navParams.data.item;
-   // console.log(this.item);
     if(this.item.id==3){
       this.issing=false;
       this.color="naranja";
     }else{
       this.issing=true;
       this.color="greendark";
-      
     }
-    this.games=this.llenarDatos(gl.categories_dt,3);
-    //console.log( this.games);
+
+    this.games=this.llenarDatos(gl.categories_dt,9);
+
   }
 
   ionViewDidLoad() {
@@ -50,9 +50,8 @@ export class Game2Page {
     let indcomp:number=1;
     let idoption:number=1;
     categoriasarr.forEach(ele => {
-      if(ele.id>1 && ele.list.length>limitpergroup){
+      if(ele.id==2 && ele.list.length>limitpergroup){
         for (let index = 0; index < limitpergroup; index++) {
-         // console.log("grupo:"+ele.title);
           catg1= ele.list[Math.floor(Math.random()*ele.list.length)];
           option={
             id:idoption,
@@ -61,14 +60,11 @@ export class Game2Page {
             isCorrect:true,
             est:true
           }
-         // console.log("option",option);
           options.push(option);
           idoption++;
-         // console.log(catg1,"Caregoria1");
           do{
             catg2= ele.list[Math.floor(Math.random()*ele.list.length)];
           }while(catg2.id==catg1.id);
-          //console.log(catg2,"Caregoria2");
           option={
             id:idoption,
             answer:catg2,
@@ -80,12 +76,14 @@ export class Game2Page {
           idoption++;
           indcomp++; 
         }
-          
+        ele.list.forEach(element => {
+          if(element.sing !=''){
+            this.ssp.preload(element.title,element.sing);
+          }
+        });
       }
+    //  console.log("lista",this.ssp.sounds);
     });
-
-   // console.log(options);
-
     for (let index = 1; index <indcomp; index++) {       
       games.push({
         id:index,
@@ -95,7 +93,7 @@ export class Game2Page {
     games.forEach(game => {
       game.listOption= this.mesclarDatos(game.listOption);
     });
-    console.log(games);
+  //  console.log(games);
    return games; 
   }
   private elegiroption(isCorrect:boolean){
@@ -131,6 +129,11 @@ export class Game2Page {
       arreglo[j] = k;
     }
     return  arreglo;
+  }
+
+  playsingtitle(keyt:string){
+ //   console.log("key",keyt);
+    this.ssp.play(keyt);
   }
 
 

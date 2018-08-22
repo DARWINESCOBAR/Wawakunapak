@@ -4,4 +4,6 @@ export class User{
     edad:number;
     puntaje:number;
     img?:string;
+    imgn?:string;
+    isboy:boolean;
 }

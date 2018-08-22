@@ -18,7 +18,8 @@
   <ion-row>
     <ion-col text-center>
         <div class="contorno-img">
-            <img [src]="usuario.img" style="width: 80%;">
+            <img [src]="usuario.img" *ngIf="usuario.isboy" style="width: 80%;">
+            <img [src]="usuario.imgn" *ngIf="!usuario.isboy" style="width: 80%;">
         </div>
 
     </ion-col>
@@ -31,7 +32,7 @@
   </ion-row>
   <ion-row >
       <ion-col text-center>
-          <button ion-button color="greendark" (click)="presentPrompt()" ><ion-icon name="md-create"></ion-icon> &nbsp;&nbsp;&nbsp; Editar</button>
+          <button ion-button color="greendark" (click)="presentPopover()" ><ion-icon name="md-create"></ion-icon> &nbsp;&nbsp;&nbsp; Editar</button>
       </ion-col>    
     </ion-row>
   <ion-row text-center>

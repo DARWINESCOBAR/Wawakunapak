@@ -13,6 +13,7 @@ import {GamePage} from '../pages/game/game';
 import {MsghomePage} from '../pages/msghome/msghome';
 import {Game2Page} from '../pages/game2/game2';
 import {Game3Page} from '../pages/game3/game3';
+import {EditProfilPage} from '../pages/edit-profil/edit-profil';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,7 +38,8 @@ import { IonicStorageModule } from '@ionic/storage';
     GamePage,
     Game2Page,
     Game3Page,
-    MsghomePage
+    MsghomePage,
+    EditProfilPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { IonicStorageModule } from '@ionic/storage';
     GamePage,
     Game2Page,
     Game3Page,
-    MsghomePage
+    MsghomePage,
+    EditProfilPage
   ],
   providers: [
     StatusBar,

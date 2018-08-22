@@ -43,11 +43,11 @@ export class SmartSoundProvider {
             this.presentartoast(err);
         });*/
         this.nativeAudio.preloadComplex(key, asset, 1, 1, 0).then((res) => {     
-          this.presentartoast(res)         ;
+     //     this.presentartoast(res)         ;
             console.log(res);
         }, (err) => {
             console.log(err);
-            this.presentartoast(err);
+       //     this.presentartoast(err);
         });
         let audio = {
             key: key,
@@ -78,11 +78,11 @@ export class SmartSoundProvider {
       } else {
         // 'messa'+audio.type+'s'+audio.asset+'/'+audio.key
           this.nativeAudio.play(audio.key).then((res) => {     
-            this.presentartoast(res)         ;
+        //    this.presentartoast(res)         ;
               console.log(res);
           }, (err) => {
               console.log(err,audio.key);
-              this.presentartoast(err+'/'+audio.key);
+        //      this.presentartoast(err+'/'+audio.key);
           });
 
       }
