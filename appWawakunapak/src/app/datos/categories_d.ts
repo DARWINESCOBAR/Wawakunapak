@@ -16,7 +16,7 @@ export class Globals{
                 id:1,
                 title:'A',
                 icon:'../../assets/imgs/categorias/a.png',
-                sing:'../../assets/sounds/a.mp3',
+                sing:'assets/sounds/a.mp3',
                 isvocal:true,
                 est:true
             },
@@ -24,7 +24,7 @@ export class Globals{
                 id:2,
                 title:'I',
                 icon:'../../assets/imgs/categorias/i.png',
-                sing:'../../assets/sounds/i.mp3',
+                sing:'assets/sounds/i.mp3',
                 isvocal:true,
                 est:true
             },
@@ -32,7 +32,7 @@ export class Globals{
                 id:3,
                 title:'U',
                 icon:'../../assets/imgs/categorias/u.png',
-                sing:'../../assets/sounds/u.mp3',
+                sing:'assets/sounds/u.mp3',
                 isvocal:true,
                 est:true
             },
@@ -40,7 +40,7 @@ export class Globals{
                 id:4,
                 title:'CH',
                 icon:'../../assets/imgs/categorias/ch.png',
-                sing:'../../assets/sounds/ch.mp3',
+                sing:'assets/sounds/ch.mp3',
                 isvocal:false,
                 est:true
             },
@@ -48,7 +48,7 @@ export class Globals{
                 id:5,
                 title:'H',
                 icon:'../../assets/imgs/categorias/h.png',
-                sing:'../../assets/sounds/h.mp3',
+                sing:'assets/sounds/h.mp3',
                 isvocal:false,
                 est:true
             },
@@ -56,7 +56,7 @@ export class Globals{
                 id:6,
                 title:'K',
                 icon:'../../assets/imgs/categorias/k.png',
-                sing:'../../assets/sounds/k.mp3',
+                sing:'assets/sounds/k.mp3',
                 isvocal:false,
                 est:true
             },
@@ -64,7 +64,7 @@ export class Globals{
                 id:7,
                 title:'L',
                 icon:'../../assets/imgs/categorias/l.png',
-                sing:'../../assets/sounds/l.mp3',
+                sing:'assets/sounds/l.mp3',
                 isvocal:false,
                 est:true
             },
@@ -72,7 +72,7 @@ export class Globals{
                 id:8,
                 title:'LL',
                 icon:'../../assets/imgs/categorias/ll.png',
-                sing:'../../assets/sounds/ll.mp3',
+                sing:'assets/sounds/ll.mp3',
                 isvocal:false,
                 est:true
             },
@@ -80,7 +80,7 @@ export class Globals{
                 id:9,
                 title:'M',
                 icon:'../../assets/imgs/categorias/m.png',
-                sing:'../../assets/sounds/m.mp3',
+                sing:'assets/sounds/m.mp3',
                 isvocal:false,
                 est:true
             },
@@ -88,7 +88,7 @@ export class Globals{
                 id:10,
                 title:'N',
                 icon:'../../assets/imgs/categorias/n.png',
-                sing:'../../assets/sounds/n.mp3',
+                sing:'assets/sounds/n.mp3',
                 isvocal:false,
                 est:true
             },
@@ -96,7 +96,7 @@ export class Globals{
                 id:11,
                 title:'Ñ',
                 icon:'../../assets/imgs/categorias/nn.png',
-                sing:'../../assets/sounds/nn.mp3',
+                sing:'assets/sounds/nn.mp3',
                 isvocal:false,
                 est:true
             },
@@ -104,7 +104,7 @@ export class Globals{
                 id:12,
                 title:'P',
                 icon:'../../assets/imgs/categorias/p.png',
-                sing:'../../assets/sounds/p.mp3',
+                sing:'assets/sounds/p.mp3',
                 isvocal:false,
                 est:true
             },
@@ -112,7 +112,7 @@ export class Globals{
                 id:13,
                 title:'R',
                 icon:'../../assets/imgs/categorias/r.png',
-                sing:'../../assets/sounds/r.mp3',
+                sing:'assets/sounds/r.mp3',
                 isvocal:false,
                 est:true
             },
@@ -120,7 +120,7 @@ export class Globals{
                 id:14,
                 title:'T',
                 icon:'../../assets/imgs/categorias/t.png',
-                sing:'../../assets/sounds/t.mp3',
+                sing:'assets/sounds/t.mp3',
                 isvocal:false,
                 est:true
             },
@@ -128,7 +128,7 @@ export class Globals{
                 id:15,
                 title:'TS',
                 icon:'../../assets/imgs/categorias/ts.png',
-                sing:'../../assets/sounds/ts.mp3',
+                sing:'assets/sounds/ts.mp3',
                 isvocal:false,
                 est:true
             },
@@ -136,7 +136,7 @@ export class Globals{
                 id:16,
                 title:'S',
                 icon:'../../assets/imgs/categorias/s.png',
-                sing:'../../assets/sounds/s.mp3',
+                sing:'assets/sounds/s.mp3',
                 isvocal:false,
                 est:true
             },
@@ -144,7 +144,7 @@ export class Globals{
                 id:17,
                 title:'SH',
                 icon:'../../assets/imgs/categorias/sh.png',
-                sing:'../../assets/sounds/sh.mp3',
+                sing:'assets/sounds/sh.mp3',
                 isvocal:false,
                 est:true
             },
@@ -152,7 +152,7 @@ export class Globals{
                 id:18,
                 title:'W',
                 icon:'../../assets/imgs/categorias/w.png',
-                sing:'../../assets/sounds/w.mp3',
+                sing:'assets/sounds/w.mp3',
                 isvocal:false,
                 est:true
             },
@@ -160,7 +160,7 @@ export class Globals{
                 id:19,
                 title:'Y',
                 icon:'../../assets/imgs/categorias/y.png',
-                sing:'../../assets/sounds/y.mp3',
+                sing:'assets/sounds/y.mp3',
                 isvocal:false,
                 est:true
             },
@@ -168,7 +168,7 @@ export class Globals{
                 id:20,
                 title:'z',
                 icon:'../../assets/imgs/categorias/z.png',
-                sing:'../../assets/sounds/z.mp3',
+                sing:'assets/sounds/z.mp3',
                 isvocal:false,
                 est:true
             }
@@ -187,7 +187,7 @@ export class Globals{
                     title:'uno',
                     titlek:'Shunk',
                     icon:'../../assets/imgs/categorias/1.png',
-                    sing:'../../assets/sounds/1.mp3',
+                    sing:'assets/sounds/1.mp3',
                     est:true
                 },
                 {
@@ -195,7 +195,7 @@ export class Globals{
                     title:'dos',
                     titlek:'Iskay',
                     icon:'../../assets/imgs/categorias/2.png',
-                    sing:'../../assets/sounds/2.mp3',
+                    sing:'assets/sounds/2.mp3',
                     est:true
                 },
                 {
@@ -203,7 +203,7 @@ export class Globals{
                     title:'tres',
                     titlek:'Kimsa',
                     icon:'../../assets/imgs/categorias/3.png',
-                    sing:'../../assets/sounds/3.mp3',
+                    sing:'assets/sounds/3.mp3',
                     est:true
                 },   
                 {
@@ -211,7 +211,7 @@ export class Globals{
                     title:'cuatro',
                     titlek:'Chusku',
                     icon:'../../assets/imgs/categorias/4.png',
-                    sing:'../../assets/sounds/4.mp3',
+                    sing:'assets/sounds/4.mp3',
                     est:true
                 },
                 {
@@ -219,7 +219,7 @@ export class Globals{
                     title:'cinco',
                     titlek:'Pichka',
                     icon:'../../assets/imgs/categorias/5.png',
-                    sing:'../../assets/sounds/5.mp3',
+                    sing:'assets/sounds/5.mp3',
                     est:true
                 },
                 {
@@ -227,7 +227,7 @@ export class Globals{
                     title:'seis',
                     titlek:'Sukta',
                     icon:'../../assets/imgs/categorias/6.png',
-                    sing:'../../assets/sounds/6.mp3',
+                    sing:'assets/sounds/6.mp3',
                     est:true
                 },
                 {
@@ -235,7 +235,7 @@ export class Globals{
                     title:'siete',
                     titlek:'Kanchis',
                     icon:'../../assets/imgs/categorias/7.png',
-                    sing:'../../assets/sounds/7.mp3',
+                    sing:'assets/sounds/7.mp3',
                     est:true
                 },
                 {
@@ -243,7 +243,7 @@ export class Globals{
                     title:'ocho',
                     titlek:'Pusak',
                     icon:'../../assets/imgs/categorias/8.png',
-                    sing:'../../assets/sounds/8.mp3',
+                    sing:'assets/sounds/8.mp3',
                     est:true
                 },
                 {
@@ -251,7 +251,7 @@ export class Globals{
                     title:'nuevo',
                     titlek:'Iskun',
                     icon:'../../assets/imgs/categorias/9.png',
-                    sing:'../../assets/sounds/9.mp3',
+                    sing:'assets/sounds/9.mp3',
                     est:true
                 },
                 {
@@ -259,7 +259,7 @@ export class Globals{
                     title:'Diez',
                     titlek:'Chunka',
                     icon:'../../assets/imgs/categorias/10.png',
-                    sing:'../../assets/sounds/10.mp3',
+                    sing:'assets/sounds/10.mp3',
                     est:true
                 }                      
             ],

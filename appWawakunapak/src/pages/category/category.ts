@@ -24,19 +24,20 @@ export class CategoryPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private ssp :SmartSoundProvider, private platform: Platform) {
     this.item=navParams.data.item;
     this.isVocabulario = navParams.data.item.title =='Vocabulario'? false:true;
-    platform.ready().then(()=>{      
+   
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CategoryPage');
+    this.platform.ready().then(()=>{      
       this.item.list.forEach(element => {
         if(element.sing !=''){
-          ssp.preload(element.title,element.sing);
+          this.ssp.preload(element.title,element.sing);
         }
       });
      // console.log("lista",this.ssp.sounds);
       
     });
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CategoryPage');
   }
   gotoGames(){
     this.navCtrl.push(AboutPage);
