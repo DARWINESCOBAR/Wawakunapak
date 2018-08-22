@@ -8,7 +8,7 @@ page-game2 {
         }
         .range-md .range-slider{
             height: 40px;
-            z-index: -1;
+           z-index: -1;
         }
         .range-md .range-bar{
           border-radius: 5px;
@@ -36,6 +36,14 @@ page-game2 {
         height: 120px;
         margin-top: 4rem;
     }
-    
+    .msgend{
+        padding-top: 3em;
+        h1{
+            color: #676767;
+        }
+        h2{
+            text-align: center;
+        }
+    }    
     
 }

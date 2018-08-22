@@ -19,7 +19,7 @@ import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
 export class Game2Page {
   item:GroupGame;
   words:number=1;
-  limitto:number=9;
+  limitto:number=10;
   issing:boolean=false;
   color:any="greendark";
   games:game[]=[];
@@ -29,12 +29,16 @@ export class Game2Page {
     if(this.item.id==3){
       this.issing=false;
       this.color="naranja";
+      this.games=this.llenarDatos(gl.categories_dt,3);
+      this.limitto=10;
     }else{
       this.issing=true;
       this.color="greendark";
+      this.games=this.llenarDatos(gl.categories_dt,9);
+      this.limitto=9;
     }
 
-    this.games=this.llenarDatos(gl.categories_dt,9);
+  
 
   }
 
@@ -49,41 +53,75 @@ export class Game2Page {
     let catg2:Category;
     let indcomp:number=1;
     let idoption:number=1;
-    categoriasarr.forEach(ele => {
-      if(ele.id==2 && ele.list.length>limitpergroup){
-        for (let index = 0; index < limitpergroup; index++) {
-          catg1= ele.list[Math.floor(Math.random()*ele.list.length)];
-          option={
-            id:idoption,
-            answer:catg1,
-            compartida:indcomp,            
-            isCorrect:true,
-            est:true
+    if(this.issing){
+      categoriasarr.forEach(ele => {
+        if(ele.id==2 && ele.list.length>limitpergroup){
+          for (let index = 0; index < limitpergroup; index++) {
+            catg1= ele.list[Math.floor(Math.random()*ele.list.length)];
+            option={
+              id:idoption,
+              answer:catg1,
+              compartida:indcomp,            
+              isCorrect:true,
+              est:true
+            }
+            options.push(option);
+            idoption++;
+            do{
+              catg2= ele.list[Math.floor(Math.random()*ele.list.length)];
+            }while(catg2.id==catg1.id);
+            option={
+              id:idoption,
+              answer:catg2,
+              compartida:indcomp,            
+              isCorrect:false,
+              est:true
+            }
+            options.push(option);
+            idoption++;
+            indcomp++; 
           }
-          options.push(option);
-          idoption++;
-          do{
-            catg2= ele.list[Math.floor(Math.random()*ele.list.length)];
-          }while(catg2.id==catg1.id);
-          option={
-            id:idoption,
-            answer:catg2,
-            compartida:indcomp,            
-            isCorrect:false,
-            est:true
-          }
-          options.push(option);
-          idoption++;
-          indcomp++; 
+          ele.list.forEach(element => {
+            if(element.sing !=''){
+              this.ssp.preload(element.title,element.sing);
+            }
+          });
         }
-        ele.list.forEach(element => {
-          if(element.sing !=''){
-            this.ssp.preload(element.title,element.sing);
+      //  console.log("lista",this.ssp.sounds);
+      });
+    }else{
+      categoriasarr.forEach(ele => {
+        if(ele.id>1 && ele.list.length>limitpergroup){
+          for (let index = 0; index < limitpergroup; index++) {
+            catg1= ele.list[Math.floor(Math.random()*ele.list.length)];
+            option={
+              id:idoption,
+              answer:catg1,
+              compartida:indcomp,            
+              isCorrect:true,
+              est:true
+            }
+            options.push(option);
+            idoption++;
+            do{
+              catg2= ele.list[Math.floor(Math.random()*ele.list.length)];
+            }while(catg2.id==catg1.id);
+            option={
+              id:idoption,
+              answer:catg2,
+              compartida:indcomp,            
+              isCorrect:false,
+              est:true
+            }
+            options.push(option);
+            idoption++;
+            indcomp++; 
           }
-        });
-      }
-    //  console.log("lista",this.ssp.sounds);
-    });
+        }
+      //  console.log("lista",this.ssp.sounds);
+      });
+    }
+    
     for (let index = 1; index <indcomp; index++) {       
       games.push({
         id:index,

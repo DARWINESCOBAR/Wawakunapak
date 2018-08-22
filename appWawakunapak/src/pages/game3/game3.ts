@@ -23,23 +23,26 @@ export class Game3Page {
   listcat:GroupCategory[]=[];
   categorias:Category[];
   options:any[];
+  idselect1:number=-1;
+  idselect2:number=-1;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
     this.item=this.navParams.data.item;
     this.listcat=this.gl.categories_dt.slice();
-    Promise.all(this.listcat).then(()=>{
-      this.listcat= this.mesclarDatos(this.listcat); 
-    }).then(()=>{
-      this.quitarVocabulario();    
-    }).then(()=>{
-      /*this.listcat.forEach(listc => {
-        listc.list = this.mesclarDatos(listc.list);
-      });*/
-      console.log(this.listcat);
-    });
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Game3Page');
+    Promise.all(this.listcat).then(()=>{
+      this.listcat= this.mesclarDatos(this.listcat); 
+    }).then(()=>{
+      this.quitarVocabulario();    
+    }).then(()=>{   
+      this.mostrarBotones();   
+    }).then(()=>{      
+      console.log(this.listcat);   
+    });
    
   }
   public quitarVocabulario(){
@@ -54,16 +57,41 @@ export class Game3Page {
     }
   }
 
-  public llenarDatos(categoriasgp){
-    this.categorias=[];   
-    for (let index = 1; index < categoriasgp.length; index++) {     
-     for (let jindex = 0; jindex < categoriasgp[index].list.length; jindex++) {       
-       if(categoriasgp[index].list[jindex].est){          
-          this.categorias.push(categoriasgp[index].list[jindex]);  
-       }                
-     }
-    }
+  mostrarBotones(){
+    this.categorias=[];
+    let cat1:Category;
+    let cat2:Category;
+    
+    this.listcat.forEach(element => {
+      element.listaux=[];
+      for (let index = 0; index < element.list.length && index < this.option ; index++) {
+        cat1 = {
+          id: element.list[index].id,
+          title: element.list[index].title,
+          titlek: element.list[index].titlek,
+          icon: element.list[index].icon,
+          sing: element.list[index].sing,
+          isimg: true,
+          compart:false,
+          est:true
+        };
+        element.listaux.push(cat1);        
+        cat2 = {
+          id: element.list[index].id,
+          title: element.list[index].title,
+          titlek: element.list[index].titlek,
+          icon: element.list[index].icon,
+          sing: element.list[index].sing,
+          isimg: false,
+          compart:false,
+          est:true
+        };       
+        element.listaux.push(cat2);
+      }
+      element.listaux=this.mesclarDatos(element.listaux);
+    });
   }
+
   public mesclarDatos(arreglo:any[]){
     let i,j,k;
     for (i = arreglo.length; i; i--) {
@@ -82,6 +110,39 @@ export class Game3Page {
     return cats;
   }
 
+  selecionarObjeto(id:number, index: number){
+    console.log(id,"id-selec",this.idselect1,this.idselect2, index );
+      if( this.idselect1 == -1){
+        this.idselect1 = id;        
+      }else{
+        this.idselect2 = id;
+      }
+      if(this.idselect2!==-1){
+        if(this.idselect1==this.idselect2){
+          console.log("Eleccion correcta");
+          this.listcat[index].listaux.forEach(element => {
+            if(element.id==id){
+              element.compart=true
+            }
+          });
+          this.idselect1= -1;
+          this.idselect2=-1;
+//          console.log(this.listcat[index].listaux.filter(aux => aux.compart==false).length);
+          if(this.listcat[index].listaux.filter(aux => aux.compart==false).length <= 0){
+            this.words++;
+            this.presentToast("Bien hecho :)",1000,"exitoMg");
+          }
+          //console.log(this.listcat[index]);
+        }else{
+          console.log("Eleccion incorrecta");
+          this.idselect1= -1;
+          this.idselect2=-1;
+          this.vibration.vibrate(1000);
+        }
+      }
+  }
+
+
   presentToast(messa:string,duration:number,classcss:string) {
     let toast = this.toastCtrl.create({
       message: messa,
@@ -93,7 +154,6 @@ export class Game3Page {
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
     });
-  
     toast.present();
   }
 

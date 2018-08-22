@@ -8,7 +8,7 @@ page-game3 {
         }
         .range-md .range-slider{
             height: 40px;
-           // z-index: -1;
+            z-index: -1;
         }
         .range-md .range-bar{
           border-radius: 5px;
@@ -24,6 +24,14 @@ page-game3 {
         width: 100%;
         font-size: 1rem;
     }
-    
+    .colend{
+        text-align: center;
+        h1{
+            color: #676767;            
+        }
+        h2{
+            color: #000000;
+        }
+    }
 
 }

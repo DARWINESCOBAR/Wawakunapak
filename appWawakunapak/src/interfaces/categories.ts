@@ -6,6 +6,7 @@ export class GroupCategory
     icon?: string;
     colorBt?:string;
     list:Category[];     
+    listaux?:Category[];
     est:boolean;
 }
 export class Category{
@@ -17,5 +18,7 @@ export class Category{
     isvocal?:boolean;
     words?:string[];
     wordstitle?:string[];
-     est:boolean;    
+    compart?:boolean;
+    isimg?:boolean;    
+    est:boolean;    
 }

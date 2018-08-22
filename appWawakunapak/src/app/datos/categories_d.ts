@@ -636,7 +636,7 @@ export class Globals{
         },
         {
             id:2,
-            title:'Relacionar palabras',
+            title:'Relacionar Sonidos',
             colorBt:'#006837', 
             img:'../../assets/imgs/games/2.png'   , 
             listOpcion:[
@@ -645,14 +645,14 @@ export class Globals{
         },
         {
             id:3,
-            title:'Relacionar Objetos',
+            title:'Relacionar Palabras',
             colorBt:'#FF7900',
             img:'../../assets/imgs/games/3.png'   ,
             est:true
         },
         {
             id:4,
-            title:'Ahorcados',
+            title:'Relacionar Objetos',
             img:'../../assets/imgs/games/4.png'   ,
             colorBt:'#ED1C24',
             est:true

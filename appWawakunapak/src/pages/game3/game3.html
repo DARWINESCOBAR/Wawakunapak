@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <ion-fab top left *ngIf="(words+1)!=11" >
+  <ion-fab top left *ngIf="(words+1)!=6" >
     <button ion-fab color="rojo" >{{ words }} </button>      
 </ion-fab>
 <div [ngSwitch]="words">
@@ -26,17 +26,35 @@
               <ion-col col-12> <h1>{{ it.titlek.toLocaleUpperCase() }}</h1>  <h2>{{ it.title.toLocaleUpperCase() }}</h2> </ion-col>
             </ion-row>                     
               <ion-row >               
-                <ion-col col-4 *ngFor="let itc of it.list; let i= index">
-                    <button ion-button outline ><img src="{{ itc.icon}}" style="max-width: 50%"  ></button>
+                <ion-col col-4 *ngFor="let itc of it.listaux; let j= index">
+                    <button ion-button outline (click)="selecionarObjeto(itc.id,i)" [disabled]="itc.compart" >
+                      <img src="{{ itc.icon}}" *ngIf="itc.isimg" style="max-width: 50%"  >
+                      <p *ngIf="!itc.isimg" >{{ itc.titlek }}</p> 
+                    </button>
                 </ion-col> 
-                <ion-col col-4 *ngFor="let its of it.list; let i= index">
-                    <button ion-button outline >{{ its.titlek }} </button>
-                </ion-col>
               </ion-row>
            
           </ion-grid>
         </div>
       </div>
+      <ion-grid *ngSwitchCase="limitto+1 ">
+        <ion-row justify-content-center align-items-center>
+          <ion-col class="colend"> 
+            <h1>¡ FELICITACIONES !</h1>
+            <h2> Lo lograstes, sigue avanzando</h2>            
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col class="colend">
+              <img src="../../assets/imgs/games/medalla.png" width="60%" > 
+          </ion-col>           
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+            <ion-col class="colend">
+                <img src="../../assets/imgs/games/personajes.png" width="45%" > 
+            </ion-col>                          
+          </ion-row>       
+      </ion-grid>
 </div>
 </ion-content>
 <ion-footer>

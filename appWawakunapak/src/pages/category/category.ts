@@ -30,7 +30,7 @@ export class CategoryPage {
           ssp.preload(element.title,element.sing);
         }
       });
-      console.log("lista",this.ssp.sounds);
+     // console.log("lista",this.ssp.sounds);
       
     });
   }
@@ -42,7 +42,7 @@ export class CategoryPage {
     this.navCtrl.push(AboutPage);
   }
   playsingtitle(keyt:string){
-    console.log("key",keyt);
+   // console.log("key",keyt);
     this.ssp.play(keyt);
   }
 }
