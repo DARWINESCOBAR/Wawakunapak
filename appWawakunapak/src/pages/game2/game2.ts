@@ -3,6 +3,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
+import { Storage } from '@ionic/storage';
 import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
 /**
  * Generated class for the Game2Page page.
@@ -23,9 +24,11 @@ export class Game2Page {
   issing:boolean=false;
   color:any="greendark";
   games:game[]=[];
+  isreto:boolean=false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider,private storage: Storage ) {
     this.item=this.navParams.data.item;
+    this.isreto = navParams.data.origin;
     if(this.item.id==3){
       this.issing=false;
       this.color="naranja";
@@ -138,6 +141,19 @@ export class Game2Page {
     if(isCorrect){
       this.presentToast("Bien hecho :)",1000,"exitoMg");
       this.words++;
+      if(this.words >= this.limitto && this.isreto){
+        this.storage.get("user").then((val)=>{
+          if(val.puntaje<=4){
+            val.puntaje++;
+            this.storage.set("user",val);
+            console.log(val); 
+            this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
+          }else{
+            this.presentToast("Ha alcanzado todas las estrellas",3000,"exitoMg");
+          }
+         
+        })        
+      }
     }else{
       this.presentToast("Intentalo de nuevo :(",1000,"errorMg");
       this.vibration.vibrate([2000,1000,2000]);

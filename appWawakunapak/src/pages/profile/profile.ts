@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,PopoverController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,PopoverController, Events  } from 'ionic-angular';
 import { Globals } from '../../app/datos/categories_d';
 import {User} from '../../interfaces/user';
+import { Storage } from '@ionic/storage';
 import { EditProfilPage } from '../edit-profil/edit-profil';
 /**
  * Generated class for the ProfilePage page.
@@ -16,18 +17,28 @@ import { EditProfilPage } from '../edit-profil/edit-profil';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-  usuario:User;
+  usuario:any={};
   estrellas:boolean[];
   labelyears:string='año';
-  constructor(public navCtrl: NavController, public navParams: NavParams,private gl:Globals, public popoverCtrl: PopoverController) {
-    this.usuario=gl.user_dt;    
-    this.labelyears= gl.user_dt.edad>1?'años':'año';
-    this.contarEstrellaws(gl.user_dt.puntaje);
-    console.log(this.estrellas);
+  constructor(public navCtrl: NavController, public navParams: NavParams,private gl:Globals, public popoverCtrl: PopoverController,private storage: Storage, public events: Events ) {   
+    this.events.subscribe('cambio',(user)=>{
+      console.log("hola, event profi",user);
+      this.usuario= user;
+      this.labelyears= user.edad>1?'años':'año';
+      this.contarEstrellaws(user.puntaje);      
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    this.storage.get('user').then((val)=>{
+      console.log(val);
+      this.usuario= val;
+      this.labelyears= val.edad>1?'años':'año';
+      this.contarEstrellaws(val.puntaje);
+      })
+
+     
   }
   contarEstrellaws(limit){
     this.estrellas=[];

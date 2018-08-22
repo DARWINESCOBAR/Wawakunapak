@@ -4,16 +4,16 @@
 
       <ion-item>
           <ion-label floating>Nombre</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="user.nombre" ></ion-input>
       </ion-item>
       
       <ion-item>
           <ion-label floating>Edad</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number"  [(ngModel)]="user.edad" ></ion-input>
       </ion-item>
       <ion-item>
           <ion-label>Niño</ion-label>
-          <ion-toggle  checked="false"></ion-toggle>
+          <ion-toggle    [(ngModel)]="user.isboy"  ></ion-toggle>
         </ion-item>     
     </ion-list>
     <ion-grid >
@@ -24,7 +24,7 @@
                 </button>
           </ion-col>
           <ion-col>
-              <button ion-button icon-only full color="greendark">
+              <button ion-button icon-only full color="greendark" (click)="save()" >
                   <ion-icon name="md-refresh"></ion-icon>
                 </button>
           </ion-col>

@@ -6,7 +6,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+    <ion-grid>
+        <ion-row justify-content-center align-items-center>
+          <ion-col >
+            <h1>¡Prueba tus conocimientos!</h1>
+            <h3>Acepta el reto y gana puntos por tu participación.</h3>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col align-self-center>
+            <button ion-button color="amarrillo" (click)="gotoGame()" >  <ion-icon ios="ios-exit" md="md-exit"></ion-icon> &nbsp;&nbsp;&nbsp; Aceptar</button>
+          </ion-col>
+        </ion-row>  
+      </ion-grid>
  
 </ion-content>

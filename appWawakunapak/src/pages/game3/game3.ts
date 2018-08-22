@@ -3,6 +3,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the Game3Page page.
  *
@@ -25,9 +26,11 @@ export class Game3Page {
   options:any[];
   idselect1:number=-1;
   idselect2:number=-1;
+  isreto:boolean=false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration,private storage: Storage ) {
     this.item=this.navParams.data.item;
+    this.isreto = navParams.data.origin;
     this.listcat=this.gl.categories_dt.slice();
     
   }
@@ -130,6 +133,19 @@ export class Game3Page {
 //          console.log(this.listcat[index].listaux.filter(aux => aux.compart==false).length);
           if(this.listcat[index].listaux.filter(aux => aux.compart==false).length <= 0){
             this.words++;
+            if(this.words >= this.limitto && this.isreto){
+              this.storage.get("user").then((val)=>{
+                if(val.puntaje<=4){
+                  val.puntaje++;
+                  this.storage.set("user",val);
+                  console.log(val); 
+                  this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
+                }else{
+                  this.presentToast("Ha alcanzado todas las estrellas",3000,"exitoMg");
+                }
+               
+              })        
+            }
             this.presentToast("Bien hecho :)",1000,"exitoMg");
           }
           //console.log(this.listcat[index]);

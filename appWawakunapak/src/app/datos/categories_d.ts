@@ -663,7 +663,7 @@ export class Globals{
         id:1,
         nombre:'Ramiro Escobar',
         edad:10,
-        puntaje:3,
+        puntaje:0,
         img:'../../assets/imgs/perfil/perfil.png',
         imgn:'../../assets/imgs/perfil/perfiln.png',
         isboy:true

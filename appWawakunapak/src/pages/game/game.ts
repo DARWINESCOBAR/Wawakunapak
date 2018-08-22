@@ -3,7 +3,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {GroupGame, game, option,Category, GroupCategory} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
-
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the GamePage page.
  *
@@ -22,9 +22,11 @@ export class GamePage {
   item:GroupGame;
   listcat:GroupCategory[];
   categorias:Category[];  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration) {
+  isreto:boolean=false;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration,private storage: Storage) {
     this.item=navParams.data.item;  
     this.listcat=this.gl.categories_dt;    
+    this.isreto = navParams.data.origin;
    Promise.all(this.listcat).then(()=>{ 
       this.llenarDatos(this.listcat);      
     }).then(
@@ -82,14 +84,28 @@ export class GamePage {
     let letvac=this.categorias[index].words.indexOf("_");      
     if(letcomp.indexOf(letupca)>-1){
       this.categorias[index].words[letvac]=letupca;      
-    }
+    } 
     letvac=this.categorias[index].words.indexOf("_");      
     if(letvac == -1){      
       if(this.categorias[index].words.join("")==this.categorias[index].titlek.toLocaleUpperCase()){        
-        this.presentToast("Bien hecho :)",3000,"exitoMg");
+        this.presentToast("Bien hecho :)",1000,"exitoMg");
         this.words++;
+       // console.log(this.words,this.isreto );
+        if(this.words >= this.limitto && this.isreto){
+          this.storage.get("user").then((val)=>{
+            if(val.puntaje<=4){
+              val.puntaje++;
+              this.storage.set("user",val);
+              console.log(val); 
+              this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
+            }else{
+              this.presentToast("Ha alcanzado todas las estrellas",3000,"exitoMg");
+            }
+           
+          })        
+        }
       }else{        
-        this.presentToast("Intentalo de nuevo :(",3000,"errorMg");
+        this.presentToast("Intentalo de nuevo :(",1000,"errorMg");
         this.vibration.vibrate(1000);
       }
     }
