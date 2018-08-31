@@ -277,7 +277,7 @@ export class Globals{
                     title:'amarrillo',
                     titlek:'Killu',
                     icon:'../../assets/imgs/categorias/amarillo.png',
-                    sing:'',
+                    sing:'assets/sounds/amarillo.mp3',
                     est:true
                 },               
                 {
@@ -285,7 +285,7 @@ export class Globals{
                     title:'azul',
                     titlek:'Ankas',
                     icon:'../../assets/imgs/categorias/azul.png',
-                    sing:'',
+                    sing:'assets/sounds/azul.mp3',
                     est:true
                 },                
                 {
@@ -293,7 +293,7 @@ export class Globals{
                     title:'cafe',
                     titlek:'Paku',
                     icon:'../../assets/imgs/categorias/cafe.png',
-                    sing:'',
+                    sing:'assets/sounds/cafe.mp3',
                     est:true
                 },   
                 {
@@ -301,7 +301,7 @@ export class Globals{
                     title:'negro',
                     titlek:'Yana',
                     icon:'../../assets/imgs/categorias/negro.png',
-                    sing:'',
+                    sing:'assets/sounds/negro.mp3',
                     est:true
                 },  
                 {
@@ -309,7 +309,7 @@ export class Globals{
                     title:'rojo',
                     titlek:'Puka',
                     icon:'../../assets/imgs/categorias/rojo.png',
-                    sing:'',
+                    sing:'assets/sounds/rojo.mp3',
                     est:true
                 },        
                 {
@@ -317,7 +317,7 @@ export class Globals{
                     title:'verde',
                     titlek:'Waylla',
                     icon:'../../assets/imgs/categorias/verde.png',
-                    sing:'',
+                    sing:'assets/sounds/verde.mp3',
                     est:true
                 }      
             ],
@@ -335,7 +335,7 @@ export class Globals{
                     title:'cabeza',
                     titlek:'Uma',
                     icon:'../../assets/imgs/categorias/cabeza.png',
-                    sing:'',
+                    sing:'assets/sounds/cabeza.mp3',
                     est:true
                 },    
                 {
@@ -343,7 +343,7 @@ export class Globals{
                     title:'ojos',
                     titlek:'Ñawi',
                     icon:'../../assets/imgs/categorias/ojos.png',
-                    sing:'',
+                    sing:'assets/sounds/ojos.mp3',
                     est:true
                 },            
                 {
@@ -351,7 +351,7 @@ export class Globals{
                     title:'boca',
                     titlek:'Shimi',
                     icon:'../../assets/imgs/categorias/boca.png',
-                    sing:'',
+                    sing:'assets/sounds/boca.mp3',
                     est:true
                 },                
                 {
@@ -359,7 +359,7 @@ export class Globals{
                     title:'nariz',
                     titlek:'Sinka',
                     icon:'../../assets/imgs/categorias/nariz.png',
-                    sing:'',
+                    sing:'assets/sounds/nariz.mp3',
                     est:true
                 },   
                 {
@@ -367,7 +367,7 @@ export class Globals{
                     title:'oido',
                     titlek:'Rinri',
                     icon:'../../assets/imgs/categorias/oido.png',
-                    sing:'',
+                    sing:'assets/sounds/oido.mp3',
                     est:true
                 },                                
                 {
@@ -375,7 +375,7 @@ export class Globals{
                     title:'mano',
                     titlek:'Maki',
                     icon:'../../assets/imgs/categorias/mano.png',
-                    sing:'',
+                    sing:'assets/sounds/mano.mp3',
                     est:true
                 },  
                 {
@@ -383,7 +383,7 @@ export class Globals{
                     title:'pie',
                     titlek:'Chaki',
                     icon:'../../assets/imgs/categorias/pie.png',
-                    sing:'',
+                    sing:'assets/sounds/pie.mp3',
                     est:true
                 },              
             ],
@@ -401,7 +401,7 @@ export class Globals{
                     title:'abuelo',
                     titlek:'Hatun tayta',
                     icon:'../../assets/imgs/categorias/abuelito.png',
-                    sing:'',
+                    sing:'assets/sounds/abuelo.mp3',
                     est:true
                 },               
                 {
@@ -409,7 +409,7 @@ export class Globals{
                     title:'abuela',
                     titlek:'Hatun mama',
                     icon:'../../assets/imgs/categorias/abuelita.png',
-                    sing:'',
+                    sing:'assets/sounds/abuela.mp3',
                     est:true
                 },                
                 {
@@ -417,7 +417,7 @@ export class Globals{
                     title:'papa',
                     titlek:'Tayta',
                     icon:'../../assets/imgs/categorias/papa.png',
-                    sing:'',
+                    sing:'assets/sounds/papa.mp3',
                     est:true
                 },  
                 {
@@ -425,7 +425,7 @@ export class Globals{
                     title:'mama',
                     titlek:'Mama',
                     icon:'../../assets/imgs/categorias/mama.png',
-                    sing:'',
+                    sing:'assets/sounds/mama.mp3',
                     est:true
                 },              
             ],
@@ -443,7 +443,7 @@ export class Globals{
                     title:'perro',
                     titlek:'Allku',
                     icon:'../../assets/imgs/categorias/perro.png',
-                    sing:'',
+                    sing:'assets/sounds/perro.mp3',
                     est:true
                 },               
                 {
@@ -451,7 +451,7 @@ export class Globals{
                     title:'pollito',
                     titlek:'Kulta',
                     icon:'../../assets/imgs/categorias/pollito.png',
-                    sing:'',
+                    sing:'assets/sounds/pollito.mp3',
                     est:true
                 },                
                 {
@@ -459,7 +459,7 @@ export class Globals{
                     title:'conejo',
                     titlek:'Wallinku',
                     icon:'../../assets/imgs/categorias/conejo.png',
-                    sing:'',
+                    sing:'assets/sounds/conejo.mp3',
                     est:true
                 },   
                 {
@@ -467,7 +467,7 @@ export class Globals{
                     title:'gallina',
                     titlek:'Atallpa',
                     icon:'../../assets/imgs/categorias/gallina.png',
-                    sing:'',
+                    sing:'assets/sounds/gallina.mp3',
                     est:true
                 },    
                 {
@@ -475,7 +475,7 @@ export class Globals{
                     title:'gato',
                     titlek:'Misi',
                     icon:'../../assets/imgs/categorias/gato.png',
-                    sing:'',
+                    sing:'assets/sounds/gato.mp3',
                     est:true
                 },
                 {
@@ -483,7 +483,7 @@ export class Globals{
                     title:'hormiga',
                     titlek:'Añanku',
                     icon:'../../assets/imgs/categorias/hormiga.png',
-                    sing:'',
+                    sing:'assets/sounds/hormiga.mp3',
                     est:true
                 },          
             ],
@@ -501,7 +501,7 @@ export class Globals{
                     title:'banana',
                     titlek:'Pal anta',
                     icon:'../../assets/imgs/categorias/banana.png',
-                    sing:'',
+                    sing:'assets/sounds/banana.mp3',
                     est:true
                 },               
                 {
@@ -509,7 +509,7 @@ export class Globals{
                     title:'naranja',
                     titlek:'Chilina',
                     icon:'../../assets/imgs/categorias/naranja.png',
-                    sing:'',
+                    sing:'assets/sounds/naranja.mp3',
                     est:true
                 },                
                 {
@@ -517,7 +517,7 @@ export class Globals{
                     title:'piña',
                     titlek:'Chiwila',
                     icon:'../../assets/imgs/categorias/pina.png',
-                    sing:'',
+                    sing:'assets/sounds/pina.mp3',
                     est:true
                 },   
                 {
@@ -525,7 +525,7 @@ export class Globals{
                     title:'uvas',
                     titlek:'Paku',
                     icon:'../../assets/imgs/categorias/uvas.png',
-                    sing:'',
+                    sing:'assets/sounds/uvas.mp3',
                     est:true
                 },  
                 {
@@ -533,15 +533,15 @@ export class Globals{
                     title:'capuli',
                     titlek:'Kapulli',
                     icon:'../../assets/imgs/categorias/capuli.png',
-                    sing:'',
-                    est:true
+                    sing:'assets/sounds/capuli.mp3',
+                    est:false
                 }, 
                 {
                     id:6,
                     title:'manzana',
                     titlek:'Manzana',
                     icon:'../../assets/imgs/categorias/manzana.png',
-                    sing:'',
+                    sing:'assets/sounds/manzana.mp3',
                     est:true
                 }, 
                 {
@@ -549,7 +549,7 @@ export class Globals{
                     title:'aguacate',
                     titlek:'Palta',
                     icon:'../../assets/imgs/categorias/aguacate.png',
-                    sing:'',
+                    sing:'assets/sounds/aguacate.mp3',
                     est:true
                 }, 
                 {
@@ -557,7 +557,7 @@ export class Globals{
                     title:'Chirimoya',
                     titlek:'Ananas',
                     icon:'../../assets/imgs/categorias/chirimoya.png',
-                    sing:'',
+                    sing:'assets/sounds/chirimoya.mp3',
                     est:true
                 }, 
                 {
@@ -565,7 +565,7 @@ export class Globals{
                     title:'papaya',
                     titlek:'papaya',
                     icon:'../../assets/imgs/categorias/papaya.png',
-                    sing:'',
+                    sing:'assets/sounds/papaya.mp3',
                     est:true
                 },           
             ],
@@ -583,7 +583,7 @@ export class Globals{
                     title:'hola',
                     titlek:'IMANALLA',
                     icon:'../../assets/imgs/categorias/hola.png',
-                    sing:'',
+                    sing:'assets/sounds/hola.mp3',
                     est:true
                 },
                 {
@@ -591,7 +591,7 @@ export class Globals{
                     title:'Buenos Días',
                     titlek:'ALLI PUNCHA',
                     icon:'../../assets/imgs/categorias/dia.png',
-                    sing:'',
+                    sing:'assets/sounds/dia.mp3',
                     est:true
                 }  ,
                 {
@@ -599,7 +599,7 @@ export class Globals{
                     title:'Buenas Tardes',
                     titlek:'ALLI chishi',
                     icon:'../../assets/imgs/categorias/tarde.png',
-                    sing:'',
+                    sing:'assets/sounds/tarde.mp3',
                     est:true
                 },
                 {
@@ -607,7 +607,7 @@ export class Globals{
                     title:'Buenas Noche',
                     titlek:'ALLI TUTA',
                     icon:'../../assets/imgs/categorias/noche.png',
-                    sing:'',
+                    sing:'assets/sounds/noche.mp3',
                     est:true
                 } ,
                 {
@@ -615,7 +615,7 @@ export class Globals{
                     title:'Adios',
                     titlek:'MINCHAKAMA',
                     icon:'../../assets/imgs/categorias/adios.png',
-                    sing:'',
+                    sing:'assets/sounds/adios.mp3',
                     est:true
                 }       
 
