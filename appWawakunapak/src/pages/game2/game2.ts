@@ -37,8 +37,8 @@ export class Game2Page {
     }else{
       this.issing=true;
       this.color="greendark";
-      this.games=this.llenarDatos(gl.categories_dt,9);
-      this.limitto=9;
+      this.games=this.llenarDatos(gl.categories_dt,3);
+      this.limitto=10;
     }
 
   
@@ -58,7 +58,7 @@ export class Game2Page {
     let idoption:number=1;
     if(this.issing){
       categoriasarr.forEach(ele => {
-        if(ele.id==2 && ele.list.length>limitpergroup){
+        if(ele.id>1  && ele.list.length>limitpergroup){
           for (let index = 0; index < limitpergroup; index++) {
             catg1= ele.list[Math.floor(Math.random()*ele.list.length)];
             option={
