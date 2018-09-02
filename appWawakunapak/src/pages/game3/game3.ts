@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Vibration } from '@ionic-native/vibration';
-import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController,Platform } from 'ionic-angular';
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
 import { Storage } from '@ionic/storage';
+import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
 /**
+ * 
  * Generated class for the Game3Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
@@ -27,8 +29,11 @@ export class Game3Page {
   idselect1:number=-1;
   idselect2:number=-1;
   isreto:boolean=false;
+  jindext:number=-1;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration,private storage: Storage ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,
+              private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider,
+              private storage: Storage, private platform: Platform ) {
     this.item=this.navParams.data.item;
     this.isreto = navParams.data.origin;
     this.listcat=this.gl.categories_dt.slice();
@@ -45,6 +50,15 @@ export class Game3Page {
       this.mostrarBotones();   
     }).then(()=>{      
       console.log(this.listcat);   
+      this.platform.ready().then(()=>{
+        this.listcat.forEach(ele => {
+          ele.list.forEach(et => {
+            if(et.sing!=''){
+              this.ssp.preload(et.title,et.sing);
+            }
+          });
+        });
+      });
     });
    
   }
@@ -113,49 +127,53 @@ export class Game3Page {
     return cats;
   }
 
-  selecionarObjeto(id:number, index: number){
-    console.log(id,"id-selec",this.idselect1,this.idselect2, index );
-      if( this.idselect1 == -1){
-        this.idselect1 = id;        
-      }else{
-        this.idselect2 = id;
-      }
-      if(this.idselect2!==-1){
-        if(this.idselect1==this.idselect2){
-          console.log("Eleccion correcta");
-          this.listcat[index].listaux.forEach(element => {
-            if(element.id==id){
-              element.compart=true
-            }
-          });
-          this.idselect1= -1;
-          this.idselect2=-1;
-//          console.log(this.listcat[index].listaux.filter(aux => aux.compart==false).length);
-          if(this.listcat[index].listaux.filter(aux => aux.compart==false).length <= 0){
-            this.words++;
-            if(this.words >= this.limitto && this.isreto){
-              this.storage.get("user").then((val)=>{
-                if(val.puntaje<=4){
-                  val.puntaje++;
-                  this.storage.set("user",val);
-                  console.log(val); 
-                  this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
-                }else{
-                  this.presentToast("Ha alcanzado todas las estrellas",3000,"exitoMg");
-                }
-               
-              })        
-            }
-            this.presentToast("Bien hecho :)",1000,"exitoMg");
-          }
-          //console.log(this.listcat[index]);
+  selecionarObjeto(id:number, index: number, keyt: string, jindex:number){
+    if( this.jindext != jindex){
+      this.jindext=jindex;
+      console.log(id,"id-selec",this.idselect1,this.idselect2, index );
+        if( this.idselect1 == -1){
+          this.idselect1 = id;        
         }else{
-          console.log("Eleccion incorrecta");
-          this.idselect1= -1;
-          this.idselect2=-1;
-          this.vibration.vibrate(1000);
+          this.idselect2 = id;
         }
-      }
+        if(this.idselect2!==-1){
+          if(this.idselect1==this.idselect2){
+            console.log("Eleccion correcta");
+            this.ssp.play(keyt);
+            this.listcat[index].listaux.forEach(element => {
+              if(element.id==id){
+                element.compart=true
+              }
+            });
+            this.idselect1= -1;
+            this.idselect2=-1;
+            if(this.listcat[index].listaux.filter(aux => aux.compart==false).length <= 0){
+              this.words++;
+              if(this.words >= this.limitto && this.isreto){
+                this.storage.get("user").then((val)=>{
+                  if(val.puntaje<=4){
+                    val.puntaje++;
+                    this.storage.set("user",val);
+                    console.log(val); 
+                    this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
+                  }else{
+                    this.presentToast("Ha alcanzado todas las estrellas",3000,"exitoMg");
+                  }
+                 
+                })        
+              }
+              this.presentToast("Bien hecho :)",1000,"exitoMg");
+            }
+            //console.log(this.listcat[index]);
+          }else{
+            console.log("Eleccion incorrecta");
+            this.idselect1= -1;
+            this.idselect2=-1;
+            this.vibration.vibrate(1000);
+          }
+        }
+    }
+    
   }
 
 

@@ -27,7 +27,7 @@
             </ion-row>                     
               <ion-row >               
                 <ion-col col-4 *ngFor="let itc of it.listaux; let j= index">
-                    <button ion-button outline (click)="selecionarObjeto(itc.id,i)" [disabled]="itc.compart" >
+                    <button ion-button outline (click)="selecionarObjeto(itc.id,i,itc.title,j)" [disabled]="itc.compart" >
                       <img src="{{ itc.icon}}" *ngIf="itc.isimg" style="max-width: 50%"  >
                       <p *ngIf="!itc.isimg" >{{ itc.titlek }}</p> 
                     </button>

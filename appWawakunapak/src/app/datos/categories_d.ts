@@ -248,7 +248,7 @@ export class Globals{
                 },
                 {
                     id:9,
-                    title:'nuevo',
+                    title:'nueve',
                     titlek:'Iskun',
                     icon:'../../assets/imgs/categorias/9.png',
                     sing:'assets/sounds/9.mp3',
@@ -274,7 +274,7 @@ export class Globals{
             list: [
                 {
                     id:1,
-                    title:'amarrillo',
+                    title:'amarillo',
                     titlek:'Killu',
                     icon:'../../assets/imgs/categorias/amarillo.png',
                     sing:'assets/sounds/amarillo.mp3',
@@ -528,14 +528,14 @@ export class Globals{
                     sing:'assets/sounds/uvas.mp3',
                     est:true
                 },  
-                {
+               /* {
                     id:5,
                     title:'capuli',
                     titlek:'Kapulli',
                     icon:'../../assets/imgs/categorias/capuli.png',
                     sing:'assets/sounds/capuli.mp3',
                     est:false
-                }, 
+                }, */
                 {
                     id:6,
                     title:'manzana',
