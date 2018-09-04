@@ -19,7 +19,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      timer(6000).subscribe(() => this.showSplash = false) ;
+      timer(5000).subscribe(() => this.showSplash = false) ;
 
 
     });

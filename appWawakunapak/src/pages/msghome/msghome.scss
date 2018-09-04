@@ -3,18 +3,7 @@ page-msghome {
         text-align: center;
     }
     ion-row{
-        height: 200px;
-    }
-    .button-md{
-        border-radius: 30pt;
-        height: 40pt;
-        width: 80%;
-    }
-    .footer-md::before{
-        background-image: none;
-    }
-    ion-footer > *{
-        vertical-align: bottom;
-    
+        vertical-align: center;
+        padding-top: 2em;
     }
 }
