@@ -4,7 +4,8 @@ import { IonicPage, NavController, NavParams,ToastController,Platform } from 'io
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
 import { Storage } from '@ionic/storage';
-import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
+import { Media, MediaObject } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 /**
  * 
  * Generated class for the Game3Page page.
@@ -30,10 +31,12 @@ export class Game3Page {
   idselect2:number=-1;
   isreto:boolean=false;
   jindext:number=-1;
+  filem:MediaObject;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  public gl:Globals,
-              private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider,
-              private storage: Storage, private platform: Platform ) {
+              private toastCtrl: ToastController,private vibration: Vibration, 
+              private platform: Platform, private media: Media, private file: File,
+              private storage: Storage ) {
     this.item=this.navParams.data.item;
     this.isreto = navParams.data.origin;
     this.listcat=this.gl.categories_dt.slice();
@@ -49,16 +52,7 @@ export class Game3Page {
     }).then(()=>{   
       this.mostrarBotones();   
     }).then(()=>{      
-      console.log(this.listcat);   
-      this.platform.ready().then(()=>{
-        this.listcat.forEach(ele => {
-          ele.list.forEach(et => {
-            if(et.sing!=''){
-              this.ssp.preload(et.title,et.sing);
-            }
-          });
-        });
-      });
+      console.log(this.listcat);  
     });
    
   }
@@ -138,11 +132,11 @@ export class Game3Page {
         }
         if(this.idselect2!==-1){
           if(this.idselect1==this.idselect2){
-            console.log("Eleccion correcta");
-            this.ssp.play(keyt);
+            console.log("Eleccion correcta");            
             this.listcat[index].listaux.forEach(element => {
               if(element.id==id){
                 element.compart=true
+                this.playsingtitle(element.sing);
               }
             });
             this.idselect1= -1;
@@ -187,6 +181,37 @@ export class Game3Page {
   
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
+    });
+    toast.present();
+  }
+
+  playsingtitle(ruta: string){
+    this.platform.ready().then(()=>{
+      this.file.resolveDirectoryUrl(this.file.applicationDirectory).then((rd)=>{
+        //this.presentToast(rd.nativeURL+'www/'+ruta);
+       this.file.checkDir(rd.nativeURL, 'www/assets/sounds/').then(_ =>
+        {}
+        ).catch(err =>{ 
+          //this.presentToasterr('Directory doesn\'t exist'+JSON.stringify(err))
+      });
+        if(this.filem != null){
+          this.filem.release();
+        }
+        this.filem= this.media.create(rd.nativeURL+'www/'+ruta);
+        this.filem.onSuccess.subscribe(() => {});
+     
+         this.filem.onError.subscribe(error =>{
+           
+          // this.presentToasterr(JSON.stringify(error)); console.log(error)
+          } );
+         this.filem.play()
+         });
+    });    
+  } 
+  presentToasterr(msg:string) {
+    const toast = this.toastCtrl.create({
+      message: msg,
+      duration: 10000
     });
     toast.present();
   }

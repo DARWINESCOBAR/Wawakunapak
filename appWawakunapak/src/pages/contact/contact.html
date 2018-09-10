@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-grid>
+    <ion-grid *ngIf="!iscomplete">
         <ion-row justify-content-center align-items-center>
           <ion-col >
             <h1>¡Prueba tus conocimientos!</h1>
@@ -20,5 +20,17 @@
           </ion-col>
         </ion-row>  
       </ion-grid>
- 
+      <ion-grid *ngIf="iscomplete">
+        <ion-row justify-content-center align-items-center>
+          <ion-col >
+            <h1>¡Excelente!</h1>
+            <h3>Completastes todos los retos, ¿Quieres volve a jugarlos?  </h3>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col align-self-center>
+            <button ion-button color="amarrillo" (click)="volver()" >  <ion-icon ios="md-sync" md="md-sync"></ion-icon> &nbsp;&nbsp;&nbsp; Jugar de nuevo</button>
+          </ion-col>
+        </ion-row>  
+      </ion-grid>
 </ion-content>

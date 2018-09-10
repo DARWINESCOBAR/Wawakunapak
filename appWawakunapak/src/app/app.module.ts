@@ -19,12 +19,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Vibration } from '@ionic-native/vibration';
 import {NativeAudio} from '@ionic-native/native-audio';
-
+import { Media, MediaObject } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 //Datos
 import {Globals} from '../app/datos/categories_d';
 import { CetegoriasProvider } from '../providers/cetegorias/cetegorias';
 import { SmartSoundProvider } from '../providers/smart-sound/smart-sound';
 import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import { IonicStorageModule } from '@ionic/storage';
     CetegoriasProvider,
     Vibration,
     NativeAudio,
+    File,
+    Media,
     SmartSoundProvider
   ]
 })

@@ -34,7 +34,7 @@ export class EditProfilPage {
   }
   save(){
     this.storage.set("user",this.user);
-    this.events.publish('cambio',this.user);
+    this.events.publish('cambio','edit');
     this.viewCtrl.dismiss();    
   }
 

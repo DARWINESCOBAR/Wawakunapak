@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Vibration } from '@ionic-native/vibration';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController,Platform ,Events } from 'ionic-angular';
 import {GroupGame, game, option,Category, GroupCategory} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
 import { Storage } from '@ionic/storage';
+import { Media, MediaObject } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 /**
  * Generated class for the GamePage page.
  *
@@ -23,7 +25,12 @@ export class GamePage {
   listcat:GroupCategory[];
   categorias:Category[];  
   isreto:boolean=false;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration,private storage: Storage) {
+  filem:MediaObject;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public gl:Globals,private toastCtrl: ToastController,
+    private platform: Platform, private media: Media, private file: File,
+    private vibration: Vibration,private storage: Storage,  public events: Events) {
     this.item=navParams.data.item;  
     this.listcat=this.gl.categories_dt;    
     this.isreto = navParams.data.origin;
@@ -90,12 +97,14 @@ export class GamePage {
       if(this.categorias[index].words.join("")==this.categorias[index].titlek.toLocaleUpperCase()){        
         this.presentToast("Bien hecho :)",1000,"exitoMg");
         this.words++;
+        this.playsingtitle(this.categorias[index].sing);
        // console.log(this.words,this.isreto );
         if(this.words >= this.limitto && this.isreto){
           this.storage.get("user").then((val)=>{
             if(val.puntaje<=4){
               val.puntaje++;
               this.storage.set("user",val);
+              this.events.publish('cambio','reto');
               console.log(val); 
               this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
             }else{
@@ -137,5 +146,36 @@ export class GamePage {
   
     toast.present();
   }
+
+  playsingtitle(ruta: string){
+    this.platform.ready().then(()=>{
+      this.file.resolveDirectoryUrl(this.file.applicationDirectory).then((rd)=>{
+       this.file.checkDir(rd.nativeURL, 'www/assets/sounds/').then(_ =>
+        {}
+        ).catch(err => 
+          {
+            //this.presentToasterr('Directory doesn\'t exist'+JSON.stringify(err))
+          });
+        if(this.filem != null){
+          this.filem.release();
+        }
+        this.filem= this.media.create(rd.nativeURL+'www/'+ruta);
+        this.filem.onSuccess.subscribe(() => {});
+     
+         this.filem.onError.subscribe(error =>{           
+          //this.presentToasterr(JSON.stringify(error)); console.log(error)
+          } );
+         this.filem.play()
+         });
+    });    
+  } 
+  presentToasterr(msg:string) {
+    const toast = this.toastCtrl.create({
+      message: msg,
+      duration: 10000
+    });
+    toast.present();
+  }
+
 
 }

@@ -166,7 +166,7 @@ export class Globals{
             },
             {
                 id:20,
-                title:'z',
+                title:'Z',
                 icon:'../../assets/imgs/categorias/z.png',
                 sing:'assets/sounds/z.mp3',
                 isvocal:false,

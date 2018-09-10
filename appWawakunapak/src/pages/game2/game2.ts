@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Vibration } from '@ionic-native/vibration';
-import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController,
+   Platform, Events } from 'ionic-angular';
 import {GroupGame,game,GroupCategory,Category,option} from '../../interfaces/index';
 import {Globals} from '../../app/datos/categories_d';
 import { Storage } from '@ionic/storage';
-import { SmartSoundProvider } from '../../providers/smart-sound/smart-sound';
+import { Media, MediaObject } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 /**
  * Generated class for the Game2Page page.
  *
@@ -25,8 +27,12 @@ export class Game2Page {
   color:any="greendark";
   games:game[]=[];
   isreto:boolean=false;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public gl:Globals,private toastCtrl: ToastController,private vibration: Vibration, private ssp :SmartSoundProvider,private storage: Storage ) {
+  filem:MediaObject;
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private platform: Platform, public gl:Globals,private toastCtrl: ToastController,
+    private media: Media, private file: File,
+    private vibration: Vibration, private storage: Storage,
+    public events: Events ) {
     this.item=this.navParams.data.item;
     this.isreto = navParams.data.origin;
     if(this.item.id==3){
@@ -83,14 +89,8 @@ export class Game2Page {
             options.push(option);
             idoption++;
             indcomp++; 
-          }
-          ele.list.forEach(element => {
-            if(element.sing !=''){
-              this.ssp.preload(element.title,element.sing);
-            }
-          });
+          }          
         }
-      //  console.log("lista",this.ssp.sounds);
       });
     }else{
       categoriasarr.forEach(ele => {
@@ -121,7 +121,6 @@ export class Game2Page {
             indcomp++; 
           }
         }
-      //  console.log("lista",this.ssp.sounds);
       });
     }
     
@@ -134,7 +133,6 @@ export class Game2Page {
     games.forEach(game => {
       game.listOption= this.mesclarDatos(game.listOption);
     });
-  //  console.log(games);
    return games; 
   }
   private elegiroption(isCorrect:boolean){
@@ -146,6 +144,7 @@ export class Game2Page {
           if(val.puntaje<=4){
             val.puntaje++;
             this.storage.set("user",val);
+            this.events.publish('cambio','reto');
             console.log(val); 
             this.presentToast("Feliciades, tienes una estella más ",3000,"exitoMg");
           }else{
@@ -156,7 +155,7 @@ export class Game2Page {
       }
     }else{
       this.presentToast("Intentalo de nuevo :(",1000,"errorMg");
-      this.vibration.vibrate([2000,1000,2000]);
+      this.vibration.vibrate(1000);
     }
   }
 
@@ -185,9 +184,37 @@ export class Game2Page {
     return  arreglo;
   }
 
-  playsingtitle(keyt:string){
- //   console.log("key",keyt);
-    this.ssp.play(keyt);
+  playsingtitle(ruta:string){
+    this.platform.ready().then(()=>{
+      this.file.resolveDirectoryUrl(this.file.applicationDirectory).then((rd)=>{
+        //this.presentToast(rd.nativeURL+'www/'+ruta);
+       this.file.checkDir(rd.nativeURL, 'www/assets/sounds/').then(_ =>
+        {}
+        ).catch(err =>
+          {
+          //this.presentToasterr('Directory doesn\'t exist'+JSON.stringify(err))
+        } );
+        if(this.filem != null){
+          this.filem.release();
+        }
+        this.filem= this.media.create(rd.nativeURL+'www/'+ruta);
+        this.filem.onSuccess.subscribe(() => {});
+     
+         this.filem.onError.subscribe(error =>{
+           
+          // this.presentToasterr(JSON.stringify(error)); console.log(error)
+          } );
+         this.filem.play()
+         });
+    });   
+
+  }
+  presentToasterr(msg:string) {
+    const toast = this.toastCtrl.create({
+      message: msg,
+      duration: 10000
+    });
+    toast.present();
   }
 
 
